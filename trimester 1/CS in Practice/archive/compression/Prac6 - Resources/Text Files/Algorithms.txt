@@ -1,0 +1,932 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+<head>
+<title>Algorithm - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="MediaWiki 1.16wmf4" />
+<link rel="canonical" href="/wiki/Algorithm" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Algorithm&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Algorithm&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-1" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-1" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-1" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Vector.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" media="all" />
+<script type="text/javascript">
+var skin="vector",
+stylepath="http://bits.wikimedia.org/skins-1.5",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/w",
+wgScriptExtension=".php",
+wgScript="/w/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://en.wikipedia.org",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="Algorithm",
+wgTitle="Algorithm",
+wgAction="view",
+wgArticleId=775,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=390188121,
+wgVersion="1.16wmf4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk", "108": "Book", "109": "Book talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "book": 108, "book_talk": 109, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
+wgSiteName="Wikipedia",
+wgCategories=["All articles with dead external links", "Articles with dead external links from March 2010", "Articles to be expanded from September 2009", "All articles to be expanded", "All accuracy disputes", "Articles with disputed statements from September 2009", "Use mdy dates from August 2010", "Algorithms", "Arabic words and phrases", "Theoretical computer science", "Articles with example pseudocode", "Mathematical logic"],
+wgDBname="enwiki",
+wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+wgSearchNamespaces=[0],
+wgMWSuggestMessages=["with suggestions", "no suggestions"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgFlaggedRevsParams={"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}},
+wgStableRevisionId=0,
+wgWikimediaMobileUrl="http://en.m.wikipedia.org/wiki",
+wgCollapsibleNavBucketTest=false,
+wgCollapsibleNavForceNewVersion=false,
+wgVectorPreferences={"collapsiblenav": {"enable": 1}, "editwarning": {"enable": 1}, "simplesearch": {"enable": 1, "disablesuggest": 0}},
+wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "simplesearch": true},
+wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
+Geo={"city": "", "country": ""},
+wgNoticeProject="wikipedia";
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-1" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-1"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-1" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-1" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-1" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-1" type="text/javascript"></script>
+<script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
+<script src="/wiki/Special:BannerController?283-1" type="text/javascript"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-1" type="text/javascript"></script>
+
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Algorithm skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Algorithm</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub">  (Redirected from <a href="/w/index.php?title=Computer_algorithms&amp;redirect=no" title="Computer algorithms">Computer algorithms</a>)</div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="/wiki/File:LampFlowchart.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/91/LampFlowchart.svg/220px-LampFlowchart.svg.png" width="220" height="300" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:LampFlowchart.svg" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+This is an algorithm that tries to figure out why the lamp doesn't turn on and tries to fix it using the steps. <a href="/wiki/Flowchart" title="Flowchart">Flowcharts</a> are often used to represent algorithms graphically.</div>
+</div>
+</div>
+<p>In <a href="/wiki/Mathematics" title="Mathematics">mathematics</a>, <a href="/wiki/Computer_science" title="Computer science">computer science</a>, and related subjects, an <b>algorithm</b> is an <a href="/wiki/Effective_method" title="Effective method">effective method</a> for solving a problem expressed as a finite sequence of steps. Algorithms are used for <a href="/wiki/Calculation" title="Calculation">calculation</a>, <a href="/wiki/Data_processing" title="Data processing" class="mw-redirect">data processing</a>, and many other fields. (In more advanced or abstract settings, the instructions do not necessarily constitute a finite sequence, and even not necessarily a sequence; see, e.g., "<a href="/wiki/Nondeterministic_algorithm" title="Nondeterministic algorithm">nondeterministic algorithm</a>".)</p>
+<p>Each algorithm is a list of well-defined instructions for completing a task. Starting from an initial state, the instructions describe a computation that proceeds through a well-defined series of successive states, eventually terminating in a final ending state. The transition from one state to the next is not necessarily <a href="/wiki/Deterministic" title="Deterministic" class="mw-redirect">deterministic</a>; some algorithms, known as <a href="/wiki/Randomized_algorithms" title="Randomized algorithms" class="mw-redirect">randomized algorithms</a>, incorporate randomness.</p>
+<p>A partial formalization of the concept began with attempts to solve the <a href="/wiki/Entscheidungsproblem" title="Entscheidungsproblem">Entscheidungsproblem</a> (the "decision problem") posed by <a href="/wiki/David_Hilbert" title="David Hilbert">David Hilbert</a> in 1928. Subsequent formalizations were framed as attempts to define "<a href="/wiki/Effective_calculability" title="Effective calculability" class="mw-redirect">effective calculability</a>"<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> or "effective method";<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup> those formalizations included the <a href="/wiki/Kurt_G%C3%B6del" title="Kurt Gödel">Gödel</a>–<a href="/wiki/Jacques_Herbrand" title="Jacques Herbrand">Herbrand</a>–<a href="/wiki/Stephen_Cole_Kleene" title="Stephen Cole Kleene">Kleene</a> <a href="/wiki/Recursion_(computer_science)" title="Recursion (computer science)">recursive functions</a> of 1930, 1934 and 1935, <a href="/wiki/Alonzo_Church" title="Alonzo Church">Alonzo Church</a>'s <a href="/wiki/Lambda_calculus" title="Lambda calculus">lambda calculus</a> of 1936, <a href="/wiki/Emil_Post" title="Emil Post" class="mw-redirect">Emil Post</a>'s "<a href="/wiki/Formulation_1" title="Formulation 1" class="mw-redirect">Formulation 1</a>" of 1936, and <a href="/wiki/Alan_Turing" title="Alan Turing">Alan Turing</a>'s <a href="/wiki/Turing_machines" title="Turing machines" class="mw-redirect">Turing machines</a> of 1936–7 and 1939.</p>
+<p>The adjective "continuous" when applied to the word "algorithm" can mean: 1) An algorithm operating on data that represents continuous quantities, even though this data is represented by discrete approximations – such algorithms are studied in <a href="/wiki/Numerical_analysis" title="Numerical analysis">numerical analysis</a>; or 2) An algorithm in the form of a <a href="/wiki/Differential_equation" title="Differential equation">differential equation</a> that operates continuously on the data, running on an <a href="/wiki/Analog_computer" title="Analog computer">analog computer</a>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup></p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Why_algorithms_are_necessary:_an_informal_definition"><span class="tocnumber">1</span> <span class="toctext">Why algorithms are necessary: an informal definition</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Formalization"><span class="tocnumber">2</span> <span class="toctext">Formalization</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Termination"><span class="tocnumber">2.1</span> <span class="toctext">Termination</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Expressing_algorithms"><span class="tocnumber">2.2</span> <span class="toctext">Expressing algorithms</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Computer_algorithms"><span class="tocnumber">2.3</span> <span class="toctext">Computer algorithms</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Implementation"><span class="tocnumber">2.4</span> <span class="toctext">Implementation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Algorithmic_analysis"><span class="tocnumber">4</span> <span class="toctext">Algorithmic analysis</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Formal_versus_empirical"><span class="tocnumber">4.1</span> <span class="toctext">Formal versus empirical</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Classification"><span class="tocnumber">5</span> <span class="toctext">Classification</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#By_implementation"><span class="tocnumber">5.1</span> <span class="toctext">By implementation</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#By_design_paradigm"><span class="tocnumber">5.2</span> <span class="toctext">By design paradigm</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#By_field_of_study"><span class="tocnumber">5.3</span> <span class="toctext">By field of study</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#By_complexity"><span class="tocnumber">5.4</span> <span class="toctext">By complexity</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#By_computing_power"><span class="tocnumber">5.5</span> <span class="toctext">By computing power</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Legal_issues"><span class="tocnumber">6</span> <span class="toctext">Legal issues</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Etymology_of_the_word_Algorithm"><span class="tocnumber">7</span> <span class="toctext">Etymology of the word Algorithm</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#History:_Development_of_the_notion_of_.22algorithm.22"><span class="tocnumber">8</span> <span class="toctext">History: Development of the notion of "algorithm"</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#Discrete_and_distinguishable_symbols"><span class="tocnumber">8.1</span> <span class="toctext">Discrete and distinguishable symbols</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Manipulation_of_symbols_as_.22place_holders.22_for_numbers:_algebra"><span class="tocnumber">8.2</span> <span class="toctext">Manipulation of symbols as "place holders" for numbers: algebra</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Mechanical_contrivances_with_discrete_states"><span class="tocnumber">8.3</span> <span class="toctext">Mechanical contrivances with discrete states</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Mathematics_during_the_1800s_up_to_the_mid-1900s"><span class="tocnumber">8.4</span> <span class="toctext">Mathematics during the 1800s up to the mid-1900s</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Emil_Post_.281936.29_and_Alan_Turing_.281936.E2.80.937.2C_1939.29"><span class="tocnumber">8.5</span> <span class="toctext">Emil Post (1936) and Alan Turing (1936–7, 1939)</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#J._B._Rosser_.281939.29_and_S._C._Kleene_.281943.29"><span class="tocnumber">8.6</span> <span class="toctext">J. B. Rosser (1939) and S. C. Kleene (1943)</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#History_after_1950"><span class="tocnumber">8.7</span> <span class="toctext">History after 1950</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#See_also"><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#Notes"><span class="tocnumber">10</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="#Secondary_references"><span class="tocnumber">11.1</span> <span class="toctext">Secondary references</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Further_reading"><span class="tocnumber">12</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-31"><a href="#External_links"><span class="tocnumber">13</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=1" title="Edit section: Why algorithms are necessary: an informal definition">edit</a>]</span> <span class="mw-headline" id="Why_algorithms_are_necessary:_an_informal_definition">Why algorithms are necessary: an informal definition</span></h2>
+<dl>
+<dd><i>For a detailed presentation of the various points of view around the definition of "algorithm" see <a href="/wiki/Algorithm_characterizations" title="Algorithm characterizations">Algorithm characterizations</a>. For examples of simple addition algorithms specified in the detailed manner described in <a href="/wiki/Algorithm_characterizations" title="Algorithm characterizations">Algorithm characterizations</a>, see <a href="/wiki/Algorithm_examples" title="Algorithm examples">Algorithm examples</a>.</i></dd>
+</dl>
+<p>While there is no generally accepted <i>formal</i> definition of "algorithm," an informal definition could be "a process that performs some sequence of operations." For some people, a program is only an algorithm if it stops eventually. For others, a program is only an algorithm if it stops before a given number of calculation steps.</p>
+<p>A prototypical example of an algorithm is <a href="/wiki/Euclid%27s_algorithm" title="Euclid's algorithm" class="mw-redirect">Euclid's algorithm</a> to determine the maximum common divisor of two integers.</p>
+<p>We can derive clues to the issues involved and an informal meaning of the word from the following quotation from <a href="#CITEREFBoolosJeffrey1974.2C_1999">Boolos &amp; Jeffrey (1974, 1999)</a> (boldface added):</p>
+<blockquote>
+<p>No human being can write fast enough, or long enough, or small enough† ( †"smaller and smaller without limit ...you'd be trying to write on molecules, on atoms, on electrons") to list all members of an enumerably infinite set by writing out their names, one after another, in some notation. But humans can do something equally useful, in the case of certain enumerably infinite sets: They can give <b>explicit instructions for determining the <i>n</i>th member of the set</b>, for arbitrary finite <i>n</i>. Such instructions are to be given quite explicitly, in a form in which <b>they could be followed by a computing machine</b>, or by a <b>human who is capable of carrying out only very elementary operations on symbols</b><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup></p>
+</blockquote>
+<p>The term "enumerably infinite" means "countable using integers perhaps extending to infinity." Thus Boolos and Jeffrey are saying that an algorithm <i>implies</i> instructions for a process that "creates" output integers from an <i>arbitrary</i> "input" integer or integers that, in theory, can be chosen from 0 to infinity. Thus we might expect an algorithm to be an algebraic equation such as <b>y = m + n</b> — two arbitrary "input variables" <b>m</b> and <b>n</b> that produce an output <b>y</b>. As we see in <a href="/wiki/Algorithm_characterizations" title="Algorithm characterizations">Algorithm characterizations</a> — the word algorithm implies much more than this, something on the order of (for our addition example):</p>
+<dl>
+<dd>Precise instructions (in language understood by "the computer") for a "fast, efficient, good" <i>process</i> that specifies the "moves" of "the computer" (machine or human, equipped with the necessary internally contained information and capabilities) to find, decode, and then munch arbitrary input integers/symbols <b>m</b> and <b>n</b>, symbols <b>+</b> and <b>=</b> ... and (reliably, correctly, "effectively") produce, in a "reasonable" time, output-integer <b>y</b> at a specified place and in a specified format.</dd>
+</dl>
+<p>The concept of <i>algorithm</i> is also used to define the notion of <a href="/wiki/Decidability_(logic)" title="Decidability (logic)">decidability</a>. That notion is central for explaining how <a href="/wiki/Formal_system" title="Formal system">formal systems</a> come into being starting from a small set of <a href="/wiki/Axiom" title="Axiom">axioms</a> and rules. In <a href="/wiki/Logic" title="Logic">logic</a>, the time that an algorithm requires to complete cannot be measured, as it is not apparently related with our customary physical dimension. From such uncertainties, that characterize ongoing work, stems the unavailability of a definition of <i>algorithm</i> that suits both concrete (in some sense) and abstract usage of the term.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=2" title="Edit section: Formalization">edit</a>]</span> <span class="mw-headline" id="Formalization">Formalization</span></h2>
+<p>Algorithms are essential to the way computers process information. Many <a href="/wiki/Computer_program" title="Computer program">computer programs</a> contain algorithms that specify the specific instructions a computer should perform (in a specific order) to carry out a specified task, such as calculating employees' paychecks or printing students' report cards. Thus, an algorithm can be considered to be any sequence of operations that can be simulated by a <a href="/wiki/Turing_completeness" title="Turing completeness">Turing-complete</a> system. Authors who assert this thesis include Minsky (1967), Savage (1987) and Gurevich (2000):</p>
+<blockquote>
+<p>Minsky: "But we will also maintain, with Turing . . . that any procedure which could "naturally" be called effective, can in fact be realized by a (simple) machine. Although this may seem extreme, the arguments . . . in its favor are hard to refute".<sup id="cite_ref-Minsky_1967:105_4-0" class="reference"><a href="#cite_note-Minsky_1967:105-4"><span>[</span>5<span>]</span></a></sup></p>
+</blockquote>
+<blockquote>
+<p>Gurevich: "...Turing's informal argument in favor of his thesis justifies a stronger thesis: every algorithm can be simulated by a Turing machine ... according to Savage [1987], an algorithm is a computational process defined by a Turing machine".<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>6<span>]</span></a></sup></p>
+</blockquote>
+<p>Typically, when an algorithm is associated with processing information, data is read from an input source, written to an output device, and/or stored for further processing. Stored data is regarded as part of the internal state of the entity performing the algorithm. In practice, the state is stored in one or more <a href="/wiki/Data_structure" title="Data structure">data structures</a>.</p>
+<p>For some such computational process, the algorithm must be rigorously defined: specified in the way it applies in all possible circumstances that could arise. That is, any conditional steps must be systematically dealt with, case-by-case; the criteria for each case must be clear (and computable).</p>
+<p>Because an algorithm is a precise list of precise steps, the order of computation will always be critical to the functioning of the algorithm. Instructions are usually assumed to be listed explicitly, and are described as starting "from the top" and going "down to the bottom", an idea that is described more formally by <i><a href="/wiki/Control_flow" title="Control flow">flow of control</a></i>.</p>
+<p>So far, this discussion of the formalization of an algorithm has assumed the premises of <a href="/wiki/Imperative_programming" title="Imperative programming">imperative programming</a>. This is the most common conception, and it attempts to describe a task in discrete, "mechanical" means. Unique to this conception of formalized algorithms is the <a href="/wiki/Assignment_operation" title="Assignment operation" class="mw-redirect">assignment operation</a>, setting the value of a variable. It derives from the intuition of "<a href="/wiki/Memory" title="Memory">memory</a>" as a scratchpad. There is an example below of such an assignment.</p>
+<p>For some alternate conceptions of what constitutes an algorithm see <a href="/wiki/Functional_programming" title="Functional programming">functional programming</a> and <a href="/wiki/Logic_programming" title="Logic programming">logic programming</a> .</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=3" title="Edit section: Termination">edit</a>]</span> <span class="mw-headline" id="Termination">Termination</span></h3>
+<p>Some writers restrict the definition of <i>algorithm</i> to procedures that eventually finish. In such a category Kleene places the "<i>decision procedure</i> or <i>decision method</i> or <i>algorithm</i> for the question".<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup> Others, including Kleene, include procedures that could run forever without stopping; such a procedure has been called a "computational method"<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup> or "<i>calculation procedure</i> or <i>algorithm</i> (and hence a <i>calculation problem</i>) in relation to a general question which requires for an answer, not yes or no, but <b>the exhibiting of some object</b>".<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>9<span>]</span></a></sup></p>
+<p>Minsky makes the pertinent observation, in regards to determining whether an algorithm will eventually terminate (from a particular starting state):</p>
+<blockquote>
+<p>But if the length of the process isn't known in advance, then "trying" it may not be decisive, because if the process does go on forever—then at no time will we ever be sure of the answer.<sup id="cite_ref-Minsky_1967:105_4-1" class="reference"><a href="#cite_note-Minsky_1967:105-4"><span>[</span>5<span>]</span></a></sup></p>
+</blockquote>
+<p>As it happens, no other method can do any better, as was shown by <a href="/wiki/Alan_Turing" title="Alan Turing">Alan Turing</a> with his celebrated result on the undecidability of the so-called <a href="/wiki/Halting_problem" title="Halting problem">halting problem</a>. There is no algorithmic procedure for determining whether or not arbitrary algorithms terminate from given starting states. The analysis of algorithms for their likelihood of termination is called <a href="/wiki/Termination_analysis" title="Termination analysis">termination analysis</a>.</p>
+<p>See the examples of (im-)"proper" subtraction at <a href="/wiki/Partial_function" title="Partial function">partial function</a> for more about what can happen when an algorithm fails for certain of its input numbers—e.g., (i) non-termination, (ii) production of "junk" (output in the wrong format to be considered a number) or no number(s) at all (halt ends the computation with no output), (iii) wrong number(s), or (iv) a combination of these. Kleene proposed that the production of "junk" or failure to produce a number is solved by having the algorithm detect these instances and produce e.g., an error message (he suggested "0"), or preferably, force the algorithm into an endless loop.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>10<span>]</span></a></sup> Davis (1958) does this to his subtraction algorithm—he fixes his algorithm in a second example so that it is proper subtraction and it terminates.<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>11<span>]</span></a></sup> Along with the logical outcomes "true" and "false" Kleene (1952) also proposes the use of a third logical symbol "u" — undecided<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span>[</span>12<span>]</span></a></sup> — thus an algorithm will always produce <i>something</i> when confronted with a "proposition". The problem of wrong answers must be solved with an independent "proof" of the algorithm e.g., using induction:</p>
+<blockquote>
+<p>We normally require auxiliary evidence for this [that the algorithm correctly defines a <a href="/wiki/Mu_recursive_function" title="Mu recursive function" class="mw-redirect">mu recursive function</a>], e.g, in the form of an inductive proof that, for each argument value, the computation terminates with a unique value.<sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span>[</span>13<span>]</span></a></sup></p>
+</blockquote>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=4" title="Edit section: Expressing algorithms">edit</a>]</span> <span class="mw-headline" id="Expressing_algorithms">Expressing algorithms</span></h3>
+<p>Algorithms can be expressed in many kinds of notation, including <a href="/wiki/Natural_language" title="Natural language">natural languages</a>, <a href="/wiki/Pseudocode" title="Pseudocode">pseudocode</a>, <a href="/wiki/Flowchart" title="Flowchart">flowcharts</a>, <a href="/wiki/Programming_language" title="Programming language">programming languages</a> or <a href="/wiki/Control_table" title="Control table">control tables</a> (processed by <a href="/wiki/Interpreter_(computing)" title="Interpreter (computing)">interpreters</a>). Natural language expressions of algorithms tend to be verbose and ambiguous, and are rarely used for complex or technical algorithms. Pseudocode, flowcharts and control tables are structured ways to express algorithms that avoid many of the ambiguities common in natural language statements, while remaining independent of a particular implementation language. Programming languages are primarily intended for expressing algorithms in a form that can be executed by a computer, but are often used as a way to define or document algorithms.</p>
+<p>There is a wide variety of representations possible and one can express a given <a href="/wiki/Turing_machine" title="Turing machine">Turing machine</a> program as a sequence of machine tables (see more at <a href="/wiki/Finite_state_machine" title="Finite state machine" class="mw-redirect">finite state machine</a> and <a href="/wiki/State_transition_table" title="State transition table">state transition table</a>), as flowcharts (see more at <a href="/wiki/State_diagram" title="State diagram">state diagram</a>), or as a form of rudimentary <a href="/wiki/Machine_code" title="Machine code">machine code</a> or <a href="/wiki/Assembly_code" title="Assembly code" class="mw-redirect">assembly code</a> called "sets of quadruples" (see more at <a href="/wiki/Turing_machine" title="Turing machine">Turing machine</a>).</p>
+<p>Sometimes it is helpful in the description of an algorithm to supplement small "flow charts" (state diagrams) with natural-language and/or arithmetic expressions written inside "<a href="/wiki/Block_diagram" title="Block diagram">block diagrams</a>" to summarize what the "flow charts" are accomplishing.</p>
+<p>Representations of algorithms are generally classed into three accepted levels of Turing machine description:<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span>[</span>14<span>]</span></a></sup></p>
+<ul>
+<li><b>1 High-level description</b>:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>"...prose to describe an algorithm, ignoring the implementation details. At this level we do not need to mention how the machine manages its tape or head."</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li><b>2 Implementation description</b>:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>"...prose used to define the way the Turing machine uses its head and the way that it stores data on its tape. At this level we do not give details of states or transition function."</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li><b>3 Formal description</b>:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>Most detailed, "lowest level", gives the Turing machine's "state table".</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><i>For an example of the simple algorithm "Add m+n" described in all three levels see <a href="/wiki/Algorithm_examples" title="Algorithm examples">Algorithm examples</a>.</i></dd>
+</dl>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=5" title="Edit section: Computer algorithms">edit</a>]</span> <span class="mw-headline" id="Computer_algorithms">Computer algorithms</span></h3>
+<p>In <a href="/wiki/Computer_systems" title="Computer systems" class="mw-redirect">computer systems</a>, an algorithm is basically an instance of <a href="/wiki/Logic" title="Logic">logic</a> written in <a href="/wiki/Software" title="Software" class="mw-redirect">software</a> by software developers to be effective for the intended "target" computer(s), in order for the software on the target machines to <i>do something</i>. For instance, if a person is writing software that is supposed to print out a <a href="/wiki/PDF" title="PDF" class="mw-redirect">PDF</a> document located at the operating system folder "/My Documents" at <a href="/wiki/Computer_drive" title="Computer drive" class="mw-redirect">computer drive</a> "D:" every Friday at 10&#160;pm, they will write an algorithm that specifies the following actions: "If today's date (computer time) is 'Friday,' open the document at 'D:/My Documents' and call the 'print' function". While this simple algorithm does not look into whether the <a href="/wiki/Printer_(computing)" title="Printer (computing)">printer</a> has enough paper or whether the document has been moved into a different location, one can make this algorithm more robust and anticipate these problems by rewriting it as a formal <a href="/wiki/Case_statement" title="Case statement" class="mw-redirect">CASE statement</a><sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span>[</span>15<span>]</span></a></sup> or as a (carefully crafted) sequence of IF-THEN-ELSE statements.<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span>[</span>16<span>]</span></a></sup> For example the CASE statement might appear as follows (there are other possibilities):</p>
+<dl>
+<dd>CASE 1: IF today's date is NOT Friday THEN <i>exit this CASE instruction</i> ELSE</dd>
+<dd>CASE 2: IF today's date is Friday AND the document is located at 'D:/My Documents' AND there is paper in the printer THEN print the document (and <i>exit this CASE instruction</i>) ELSE</dd>
+<dd>CASE 3: IF today's date is Friday AND the document is NOT located at 'D:/My Documents' THEN display 'document not found' error message (and <i>exit this CASE instruction</i>) ELSE</dd>
+<dd>CASE 4: IF today's date is Friday AND the document is located at 'D:/My Documents' AND there is NO paper in the printer THEN (i) display 'out of paper' error message and (ii) <i>exit</i>.</dd>
+</dl>
+<p>Note that CASE 3 includes two possibilities: (i) the document is NOT located at 'D:/My Documents' AND there's paper in the printer OR (ii) the document is NOT located at 'D:/My Documents' AND there's NO paper in the printer.</p>
+<p>The sequence of IF-THEN-ELSE tests might look like this:</p>
+<dl>
+<dd>TEST 1: IF today's date is NOT Friday THEN <i>done</i> ELSE TEST 2:
+<dl>
+<dd>TEST 2: IF the document is NOT located at 'D:/My Documents' THEN display 'document not found' error message ELSE TEST 3:
+<dl>
+<dd>TEST 3: IF there is NO paper in the printer THEN display 'out of paper' error message ELSE print the document.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>These examples' logic grants precedence to the instance of "NO document at 'D:/My Documents' ". Also observe that in a well-crafted CASE statement or sequence of IF-THEN-ELSE statements the number of distinct actions—4 in these examples: do nothing, print the document, display 'document not found', display 'out of paper' – equals the number of cases.</p>
+<p>Given unlimited memory, a computational machine with the ability to execute either a set of CASE statements or a sequence of IF-THEN-ELSE statements is <a href="/wiki/Turing_complete" title="Turing complete" class="mw-redirect">Turing complete</a>. Therefore, anything that is computable can be computed by this machine. This form of algorithm is fundamental to <a href="/wiki/Computer_programming" title="Computer programming">computer programming</a> in all its forms (see more at <a href="/wiki/McCarthy_formalism" title="McCarthy formalism" class="mw-redirect">McCarthy formalism</a>).</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=6" title="Edit section: Implementation">edit</a>]</span> <span class="mw-headline" id="Implementation">Implementation</span></h3>
+<p>Most algorithms are intended to be implemented as <a href="/wiki/Computer_programs" title="Computer programs" class="mw-redirect">computer programs</a>. However, algorithms are also implemented by other means, such as in a biological <a href="/wiki/Neural_network" title="Neural network">neural network</a> (for example, the <a href="/wiki/Human_brain" title="Human brain">human brain</a> implementing <a href="/wiki/Arithmetic" title="Arithmetic">arithmetic</a> or an insect looking for food), in an <a href="/wiki/Electrical_circuit" title="Electrical circuit" class="mw-redirect">electrical circuit</a>, or in a mechanical device.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=7" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h2>
+<div class="rellink boilerplate further">Further information: <a href="/wiki/Algorithm_examples" title="Algorithm examples">Algorithm examples</a></div>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="/wiki/File:Sorting_quicksort_anim.gif" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Sorting_quicksort_anim.gif/220px-Sorting_quicksort_anim.gif" width="220" height="168" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Sorting_quicksort_anim.gif" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+An animation of the <a href="/wiki/Quicksort" title="Quicksort">quicksort algorithm</a> sorting an array of randomized values. The red bars mark the pivot element; at the start of the animation, the element farthest to the right hand side is chosen as the pivot.</div>
+</div>
+</div>
+<p>One of the simplest algorithms is to find the largest number in an (unsorted) list of numbers. The solution necessarily requires looking at every number in the list, but only once at each. From this follows a simple algorithm, which can be stated in a high-level description English prose, as:</p>
+<p><b>High-level description:</b></p>
+<ol>
+<li>Assume the first item is largest.</li>
+<li>Look at each of the remaining items in the list and if it is larger than the largest item so far, make a note of it.</li>
+<li>The last noted item is the largest in the list when the process is complete.</li>
+</ol>
+<p><b>(Quasi-)formal description:</b> Written in prose but much closer to the high-level language of a computer program, the following is the more formal coding of the algorithm in <a href="/wiki/Pseudocode" title="Pseudocode">pseudocode</a> or <a href="/wiki/Pidgin_code" title="Pidgin code">pidgin code</a>:</p>
+<div style="border:1px solid #cccccc; background-color:#f8f8f8; padding:4px;">
+<pre>
+<b>Algorithm</b> LargestNumber
+  Input: A non-empty list of numbers <i>L</i>.
+  Output: The <i>largest</i> number in the list <i>L</i>.
+</pre>
+<pre>
+  <i>largest</i> ← <i>L</i><sub>0</sub>
+  <b>for each</b> <i>item</i> <b>in</b> the list <i>(Length(L)≥1)</i>, <b>do</b>
+    <b>if</b> the <i>item</i> &gt; <i>largest</i>, <b>then</b>
+      <i>largest</i> ← the <i>item</i>
+  <b>return</b> <i>largest</i>
+</pre>
+<ul>
+<li><small>"←" is a loose shorthand for "changes to". For instance, "<i>largest</i> ← <i>item</i>" means that the value of <i>largest</i> changes to the value of <i>item</i>.</small></li>
+<li><small>"<b>return</b>" terminates the algorithm and outputs the value that follows.</small></li>
+</ul>
+</div>
+<p>For a more complex example of an algorithm, see <a href="/wiki/Euclid%27s_algorithm" title="Euclid's algorithm" class="mw-redirect">Euclid's algorithm</a> for the <a href="/wiki/Greatest_common_divisor" title="Greatest common divisor">greatest common divisor</a>, one of the earliest algorithms known.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=8" title="Edit section: Algorithmic analysis">edit</a>]</span> <span class="mw-headline" id="Algorithmic_analysis">Algorithmic analysis</span></h2>
+<div class="rellink relarticle mainarticle">Main article: <a href="/wiki/Analysis_of_algorithms" title="Analysis of algorithms">Analysis of algorithms</a></div>
+<p>It is frequently important to know how much of a particular resource (such as time or storage) is theoretically required for a given algorithm. Methods have been developed for the <a href="/wiki/Analysis_of_algorithms" title="Analysis of algorithms">analysis of algorithms</a> to obtain such quantitative answers (estimates); for example, the algorithm above has a time requirement of O(<i>n</i>), using the <a href="/wiki/Big_O_notation" title="Big O notation">big O notation</a> with <i>n</i> as the length of the list. At all times the algorithm only needs to remember two values: the largest number found so far, and its current position in the input list. Therefore it is said to have a space requirement of <i>O(1)</i>, if the space required to store the input numbers is not counted, or O(<i>n</i>) if it is counted.</p>
+<p>Different algorithms may complete the same task with a different set of instructions in less or more time, space, or '<a href="/wiki/Algorithmic_efficiency" title="Algorithmic efficiency">effort</a>' than others. For example, a <a href="/wiki/Binary_search" title="Binary search" class="mw-redirect">binary search</a> algorithm will usually outperform a <a href="/wiki/Brute-force_search" title="Brute-force search">brute force</a> sequential search when used for <a href="/wiki/Lookup_table" title="Lookup table">table lookups</a> on sorted lists.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=9" title="Edit section: Formal versus empirical">edit</a>]</span> <span class="mw-headline" id="Formal_versus_empirical">Formal versus empirical</span></h3>
+<div class="rellink relarticle mainarticle">Main articles: <a href="/wiki/Empirical_algorithmics" title="Empirical algorithmics">Empirical algorithmics</a>, <a href="/wiki/Profiling_(computer_programming)" title="Profiling (computer programming)">Profiling (computer programming)</a>, and <a href="/wiki/Program_optimization" title="Program optimization">Program optimization</a></div>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tr>
+<td class="mbox-image"><a href="/wiki/File:Wiki_letter_w.svg" class="image"><img alt="Wiki letter w.svg" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Wiki_letter_w.svg/20px-Wiki_letter_w.svg.png" width="20" height="20" /></a></td>
+<td class="mbox-text" style="">This section requires <a href="http://en.wikipedia.org/w/index.php?title=Algorithm&amp;action=edit" class="external text" rel="nofollow">expansion</a>.</td>
+</tr>
+</table>
+<p>The <a href="/wiki/Analysis_of_algorithms" title="Analysis of algorithms">analysis and study of algorithms</a> is a discipline of <a href="/wiki/Computer_science" title="Computer science">computer science</a>, and is often practiced abstractly without the use of a specific <a href="/wiki/Programming_language" title="Programming language">programming language</a> or implementation. In this sense, algorithm analysis resembles other mathematical disciplines in that it focuses on the underlying properties of the algorithm and not on the specifics of any particular implementation. Usually <a href="/wiki/Pseudocode" title="Pseudocode">pseudocode</a> is used for analysis as it is the simplest and most general representation. However, ultimately, most algorithms are usually implemented on particular hardware / software platforms and their <a href="/wiki/Algorithmic_efficiency" title="Algorithmic efficiency">algorithmic efficiency</a> is eventually put to the test using real code.</p>
+<p>Empirical testing is useful because it may uncover unexpected interactions that affect performance. For instance an algorithm that has no <a href="/wiki/Locality_of_reference" title="Locality of reference">locality of reference</a> may have much poorer performance than predicted because it 'thrashes the <a href="/wiki/Cache" title="Cache">cache</a>'. <a href="/wiki/Benchmark_(computing)" title="Benchmark (computing)">Benchmarks</a> may be used to compare before/after potential improvements to an algorithm after <a href="/wiki/Program_optimization" title="Program optimization">program optimization</a>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=10" title="Edit section: Classification">edit</a>]</span> <span class="mw-headline" id="Classification">Classification</span></h2>
+<p>There are various ways to classify algorithms, each with its own merits.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=11" title="Edit section: By implementation">edit</a>]</span> <span class="mw-headline" id="By_implementation">By implementation</span></h3>
+<p>One way to classify algorithms is by implementation means.</p>
+<ul>
+<li><b>Recursion</b> or <b>iteration</b>: A <a href="/wiki/Recursive_algorithm" title="Recursive algorithm" class="mw-redirect">recursive algorithm</a> is one that invokes (makes reference to) itself repeatedly until a certain condition matches, which is a method common to <a href="/wiki/Functional_programming" title="Functional programming">functional programming</a>. <a href="/wiki/Iteration" title="Iteration">Iterative</a> algorithms use repetitive constructs like <a href="/wiki/Control_flow#Loops" title="Control flow">loops</a> and sometimes additional data structures like <a href="/wiki/Stack_(data_structure)" title="Stack (data structure)">stacks</a> to solve the given problems. Some problems are naturally suited for one implementation or the other. For example, <a href="/wiki/Towers_of_Hanoi" title="Towers of Hanoi" class="mw-redirect">towers of Hanoi</a> is well understood in recursive implementation. Every recursive version has an equivalent (but possibly more or less complex) iterative version, and vice versa.</li>
+<li><b>Logical</b>: An algorithm may be viewed as controlled <a href="/wiki/Deductive_reasoning" title="Deductive reasoning">logical deduction</a>. This notion may be expressed as: <b>Algorithm = logic + control</b>.<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span>[</span>17<span>]</span></a></sup> The logic component expresses the axioms that may be used in the computation and the control component determines the way in which deduction is applied to the axioms. This is the basis for the <a href="/wiki/Logic_programming" title="Logic programming">logic programming</a> paradigm. In pure logic programming languages the control component is fixed and algorithms are specified by supplying only the logic component. The appeal of this approach is the elegant <a href="/wiki/Formal_semantics_of_programming_languages" title="Formal semantics of programming languages">semantics</a>: a change in the axioms has a well defined change in the algorithm.</li>
+<li><b>Serial</b> or <b>parallel</b> or <b>distributed</b>: Algorithms are usually discussed with the assumption that computers execute one instruction of an algorithm at a time. Those computers are sometimes called serial computers. An algorithm designed for such an environment is called a serial algorithm, as opposed to <a href="/wiki/Parallel_algorithm" title="Parallel algorithm">parallel algorithms</a> or <a href="/wiki/Distributed_algorithms" title="Distributed algorithms">distributed algorithms</a>. Parallel algorithms take advantage of computer architectures where several processors can work on a problem at the same time, whereas distributed algorithms utilize multiple machines connected with a <a href="/wiki/Computer_Network" title="Computer Network" class="mw-redirect">network</a>. Parallel or distributed algorithms divide the problem into more symmetrical or asymmetrical subproblems and collect the results back together. The resource consumption in such algorithms is not only processor cycles on each processor but also the communication overhead between the processors. Sorting algorithms can be parallelized efficiently, but their communication overhead is expensive. Iterative algorithms are generally parallelizable. Some problems have no parallel algorithms, and are called inherently serial problems.</li>
+<li><b>Deterministic</b> or <b>non-deterministic</b>: <a href="/wiki/Deterministic_algorithm" title="Deterministic algorithm">Deterministic algorithms</a> solve the problem with exact decision at every step of the algorithm whereas <a href="/wiki/Non-deterministic_algorithm" title="Non-deterministic algorithm" class="mw-redirect">non-deterministic algorithms</a> solve problems via guessing although typical guesses are made more accurate through the use of <a href="/wiki/Heuristics" title="Heuristics" class="mw-redirect">heuristics</a>.</li>
+<li><b>Exact</b> or <b>approximate</b>: While many algorithms reach an exact solution, <a href="/wiki/Approximation_algorithm" title="Approximation algorithm">approximation algorithms</a> seek an approximation that is close to the true solution. Approximation may use either a deterministic or a random strategy. Such algorithms have practical value for many hard problems.</li>
+<li><b>Quantum algorithm</b>: <a href="/wiki/Quantum_algorithm" title="Quantum algorithm">Quantum algorithm</a> run on a realistic model of <a href="/wiki/Quantum_computation" title="Quantum computation" class="mw-redirect">quantum computation</a>. The term is usually used for those algorithms which seem inherently quantum, or use some essential feature of quantum computation such as <a href="/wiki/Quantum_superposition" title="Quantum superposition">quantum superposition</a> or <a href="/wiki/Quantum_entanglement" title="Quantum entanglement">quantum entanglement</a>.</li>
+</ul>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=12" title="Edit section: By design paradigm">edit</a>]</span> <span class="mw-headline" id="By_design_paradigm">By design paradigm</span></h3>
+<p>Another way of classifying algorithms is by their design methodology or paradigm. There is a certain number of paradigms, each different from the other. Furthermore, each of these categories will include many different types of algorithms. Some commonly found paradigms include:</p>
+<ul>
+<li><b><a href="/wiki/Brute_force_search" title="Brute force search" class="mw-redirect">Brute-force</a></b> or <b>exhaustive search</b>. This is the naïve method of trying every possible solution to see which is best.<sup id="cite_ref-17" class="reference"><a href="#cite_note-17"><span>[</span>18<span>]</span></a></sup></li>
+<li><b>Divide and conquer</b>. A <a href="/wiki/Divide_and_conquer_algorithm" title="Divide and conquer algorithm">divide and conquer algorithm</a> repeatedly reduces an instance of a problem to one or more smaller instances of the same problem (usually <a href="/wiki/Recursion" title="Recursion">recursively</a>) until the instances are small enough to solve easily. One such example of divide and conquer is <a href="/wiki/Mergesort" title="Mergesort" class="mw-redirect">merge sorting</a>. Sorting can be done on each segment of data after dividing data into segments and sorting of entire data can be obtained in the conquer phase by merging the segments. A simpler variant of divide and conquer is called a <b>decrease and conquer algorithm</b>, that solves an identical subproblem and uses the solution of this subproblem to solve the bigger problem. Divide and conquer divides the problem into multiple subproblems and so the conquer stage will be more complex than decrease and conquer algorithms. An example of decrease and conquer algorithm is the <a href="/wiki/Binary_search_algorithm" title="Binary search algorithm">binary search algorithm</a>.</li>
+<li><b><a href="/wiki/Dynamic_programming" title="Dynamic programming">Dynamic programming</a></b>. When a problem shows <a href="/wiki/Optimal_substructure" title="Optimal substructure">optimal substructure</a>, meaning the optimal solution to a problem can be constructed from optimal solutions to subproblems, and <a href="/wiki/Overlapping_subproblems" title="Overlapping subproblems" class="mw-redirect">overlapping subproblems</a>, meaning the same subproblems are used to solve many different problem instances, a quicker approach called <i>dynamic programming</i> avoids recomputing solutions that have already been computed. For example, <a href="/wiki/Floyd%E2%80%93Warshall_algorithm" title="Floyd–Warshall algorithm">Floyd–Warshall algorithm</a>, the shortest path to a goal from a vertex in a weighted <a href="/wiki/Graph_(mathematics)" title="Graph (mathematics)">graph</a> can be found by using the shortest path to the goal from all adjacent vertices. Dynamic programming and <a href="/wiki/Memoization" title="Memoization">memoization</a> go together. The main difference between dynamic programming and divide and conquer is that subproblems are more or less independent in divide and conquer, whereas subproblems overlap in dynamic programming. The difference between dynamic programming and straightforward recursion is in caching or memoization of recursive calls. When subproblems are independent and there is no repetition, memoization does not help; hence dynamic programming is not a solution for all complex problems. By using memoization or maintaining a <a href="/wiki/Mathematical_table" title="Mathematical table">table</a> of subproblems already solved, dynamic programming reduces the exponential nature of many problems to polynomial complexity.</li>
+<li><b>The greedy method</b>. A <a href="/wiki/Greedy_algorithm" title="Greedy algorithm">greedy algorithm</a> is similar to a <a href="/wiki/Dynamic_programming" title="Dynamic programming">dynamic programming algorithm</a>, but the difference is that solutions to the subproblems do not have to be known at each stage; instead a "greedy" choice can be made of what looks best for the moment. The greedy method extends the solution with the best possible decision (not all feasible decisions) at an algorithmic stage based on the current local optimum and the best decision (not all possible decisions) made in a previous stage. It is not exhaustive, and does not give accurate answer to many problems. But when it works, it will be the fastest method. The most popular greedy algorithm is finding the minimal spanning tree as given by <a href="/wiki/Huffman_coding" title="Huffman coding">Huffman Tree</a>, <a href="/wiki/Kruskal%27s_algorithm" title="Kruskal's algorithm">Kruskal</a>, <a href="/wiki/Prim%27s_algorithm" title="Prim's algorithm">Prim</a>, <a href="/wiki/Sollin%27s_algorithm" title="Sollin's algorithm" class="mw-redirect">Sollin</a>.</li>
+<li><b>Linear programming</b>. When solving a problem using <a href="/wiki/Linear_programming" title="Linear programming">linear programming</a>, specific <a href="/wiki/Inequality_(mathematics)" title="Inequality (mathematics)">inequalities</a> involving the inputs are found and then an attempt is made to maximize (or minimize) some linear function of the inputs. Many problems (such as the <a href="/wiki/Maximum_flow_problem" title="Maximum flow problem">maximum flow</a> for directed graphs) can be stated in a linear programming way, and then be solved by a 'generic' algorithm such as the <a href="/wiki/Simplex_algorithm" title="Simplex algorithm">simplex algorithm</a>. A more complex variant of linear programming is called integer programming, where the solution space is restricted to the <a href="/wiki/Integers" title="Integers" class="mw-redirect">integers</a>.</li>
+<li><b><a href="/wiki/Reduction_(complexity)" title="Reduction (complexity)">Reduction</a></b>. This technique involves solving a difficult problem by transforming it into a better known problem for which we have (hopefully) <a href="/wiki/Asymptotically_optimal" title="Asymptotically optimal" class="mw-redirect">asymptotically optimal</a> algorithms. The goal is to find a reducing algorithm whose <a href="/wiki/Computational_complexity_theory" title="Computational complexity theory">complexity</a> is not dominated by the resulting reduced algorithm's. For example, one <a href="/wiki/Selection_algorithm" title="Selection algorithm">selection algorithm</a> for finding the median in an unsorted list involves first sorting the list (the expensive portion) and then pulling out the middle element in the sorted list (the cheap portion). This technique is also known as <i>transform and conquer</i>.</li>
+<li><b>Search and enumeration</b>. Many problems (such as playing <a href="/wiki/Chess" title="Chess">chess</a>) can be modeled as problems on <a href="/wiki/Graph_theory" title="Graph theory">graphs</a>. A <a href="/wiki/Graph_exploration_algorithm" title="Graph exploration algorithm" class="mw-redirect">graph exploration algorithm</a> specifies rules for moving around a graph and is useful for such problems. This category also includes <a href="/wiki/Search_algorithm" title="Search algorithm">search algorithms</a>, <a href="/wiki/Branch_and_bound" title="Branch and bound">branch and bound</a> enumeration and <a href="/wiki/Backtracking" title="Backtracking">backtracking</a>.</li>
+</ul>
+<ol>
+<li><a href="/wiki/Randomized_algorithm" title="Randomized algorithm">Randomized algorithms</a> are those that make some choices randomly (or pseudo-randomly); for some problems, it can in fact be proven that the fastest solutions must involve some <a href="/wiki/Randomness" title="Randomness">randomness</a>. There are two large classes of such algorithms:
+<ol>
+<li><a href="/wiki/Monte_Carlo_algorithm" title="Monte Carlo algorithm">Monte Carlo algorithms</a> return a correct answer with high-probability. E.g. <a href="/wiki/RP_(complexity)" title="RP (complexity)">RP</a> is the subclass of these that run in <a href="/wiki/Polynomial_time" title="Polynomial time" class="mw-redirect">polynomial time</a>)</li>
+<li><a href="/wiki/Las_Vegas_algorithm" title="Las Vegas algorithm">Las Vegas algorithms</a> always return the correct answer, but their running time is only probabilistically bound, e.g. <a href="/wiki/Zero-error_Probabilistic_Polynomial_time" title="Zero-error Probabilistic Polynomial time" class="mw-redirect">ZPP</a>.</li>
+</ol>
+</li>
+<li>In <a href="/wiki/Optimization_(mathematics)" title="Optimization (mathematics)">optimization problems</a>, <a href="/wiki/Heuristic" title="Heuristic">heuristic</a> algorithms do not try to find an optimal solution, but an approximate solution where the time or resources are limited. They are not practical to find perfect solutions. An example of this would be <a href="/wiki/Local_search_(optimization)" title="Local search (optimization)">local search</a>, <a href="/wiki/Tabu_search" title="Tabu search">tabu search</a>, or <a href="/wiki/Simulated_annealing" title="Simulated annealing">simulated annealing</a> algorithms, a class of heuristic probabilistic algorithms that vary the solution of a problem by a random amount. The name "simulated annealing" alludes to the metallurgic term meaning the heating and cooling of metal to achieve freedom from defects. The purpose of the random variance is to find close to globally optimal solutions rather than simply locally optimal ones, the idea being that the random element will be decreased as the algorithm settles down to a solution. <a href="/wiki/Approximation_algorithms" title="Approximation algorithms" class="mw-redirect">Approximation algorithms</a> are those heuristic algorithms that additionally provide some bounds on the error. <a href="/wiki/Genetic_algorithm" title="Genetic algorithm">Genetic algorithms</a> attempt to find solutions to problems by mimicking biological <a href="/wiki/Evolution" title="Evolution">evolutionary</a> processes, with a cycle of random mutations yielding successive generations of "solutions". Thus, they emulate reproduction and "survival of the fittest". In <a href="/wiki/Genetic_programming" title="Genetic programming">genetic programming</a>, this approach is extended to algorithms, by regarding the algorithm itself as a "solution" to a problem.</li>
+</ol>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=13" title="Edit section: By field of study">edit</a>]</span> <span class="mw-headline" id="By_field_of_study">By field of study</span></h3>
+<div class="rellink boilerplate seealso">See also: <a href="/wiki/List_of_algorithms" title="List of algorithms">List of algorithms</a></div>
+<p>Every field of science has its own problems and needs efficient algorithms. Related problems in one field are often studied together. Some example classes are <a href="/wiki/Search_algorithm" title="Search algorithm">search algorithms</a>, <a href="/wiki/Sorting_algorithm" title="Sorting algorithm">sorting algorithms</a>, <a href="/wiki/Merge_algorithm" title="Merge algorithm">merge algorithms</a>, <a href="/wiki/Numerical_analysis" title="Numerical analysis">numerical algorithms</a>, <a href="/wiki/Graph_theory" title="Graph theory">graph algorithms</a>, <a href="/wiki/String_algorithms" title="String algorithms" class="mw-redirect">string algorithms</a>, <a href="/wiki/Computational_geometry" title="Computational geometry">computational geometric algorithms</a>, <a href="/wiki/Combinatorial" title="Combinatorial" class="mw-redirect">combinatorial algorithms</a>, <a href="/wiki/Medical_algorithm" title="Medical algorithm">medical algorithms</a>, <a href="/wiki/Machine_learning" title="Machine learning">machine learning</a>, <a href="/wiki/Cryptography" title="Cryptography">cryptography</a>, <a href="/wiki/Data_compression" title="Data compression">data compression</a> algorithms and <a href="/wiki/Parsing" title="Parsing">parsing techniques</a>.</p>
+<p>Fields tend to overlap with each other, and algorithm advances in one field may improve those of other, sometimes completely unrelated, fields. For example, dynamic programming was invented for optimization of resource consumption in industry, but is now used in solving a broad range of problems in many fields.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=14" title="Edit section: By complexity">edit</a>]</span> <span class="mw-headline" id="By_complexity">By complexity</span></h3>
+<div class="rellink boilerplate seealso">See also: <a href="/wiki/Complexity_class" title="Complexity class">Complexity class</a>&#160;and <a href="/wiki/Parameterized_complexity" title="Parameterized complexity">Parameterized complexity</a></div>
+<p>Algorithms can be classified by the amount of time they need to complete compared to their input size. There is a wide variety: some algorithms complete in linear time relative to input size, some do so in an exponential amount of time or even worse, and some never halt. Additionally, some problems may have multiple algorithms of differing complexity, while other problems might have no algorithms or no known efficient algorithms. There are also mappings from some problems to other problems. Owing to this, it was found to be more suitable to classify the problems themselves instead of the algorithms into equivalence classes based on the complexity of the best possible algorithms for them.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=15" title="Edit section: By computing power">edit</a>]</span> <span class="mw-headline" id="By_computing_power">By computing power</span></h3>
+<p>Another<sup class="noprint Inline-Template" title="The material in the vicinity of this tag may not be factual or accurate from September 2009" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Disputed_statement" title="Wikipedia:Disputed statement">dubious</a> <span class="metadata">– <a href="/wiki/Talk:Algorithm#Dubious" title="Talk:Algorithm">discuss</a></span></i>]</sup> way to classify algorithms is by computing power. This is typically done by considering some collection (class) of algorithms. A recursive class of algorithms is one that includes algorithms for all Turing computable functions. Looking at classes of algorithms allows for the possibility of restricting the available computational resources (time and memory) used in a computation. A subrecursive class of algorithms is one in which not all Turing computable functions can be obtained. For example, the algorithms that run in <a href="/wiki/P_(complexity)" title="P (complexity)">polynomial time</a> suffice for many important types of computation but do not exhaust all Turing computable functions. The class of algorithms implemented by <a href="/wiki/Primitive_recursive_function" title="Primitive recursive function">primitive recursive functions</a> is another subrecursive class.</p>
+<p>Burgin (2005, p.&#160;24) uses a generalized definition of algorithms that relaxes the common requirement that the output of the algorithm that computes a function must be determined after a finite number of steps. He defines a super-recursive class of algorithms as "a class of algorithms in which it is possible to compute functions not computable by any Turing machine" (Burgin 2005, p.&#160;107). This is closely related to the study of methods of <a href="/wiki/Hypercomputation" title="Hypercomputation">hypercomputation</a>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=16" title="Edit section: Legal issues">edit</a>]</span> <span class="mw-headline" id="Legal_issues">Legal issues</span></h2>
+<dl>
+<dd><i>See also: <a href="/wiki/Software_patents" title="Software patents" class="mw-redirect">Software patents</a> for a general overview of the patentability of software, including computer-implemented algorithms.</i></dd>
+</dl>
+<p>Algorithms, by themselves, are not usually patentable. In the United States, a claim consisting solely of simple manipulations of abstract concepts, numbers, or signals does not constitute "processes" (USPTO 2006), and hence algorithms are not patentable (as in <a href="/wiki/Gottschalk_v._Benson" title="Gottschalk v. Benson">Gottschalk v. Benson</a>). However, practical applications of algorithms are sometimes patentable. For example, in <a href="/wiki/Diamond_v._Diehr" title="Diamond v. Diehr">Diamond v. Diehr</a>, the application of a simple <a href="/wiki/Feedback" title="Feedback">feedback</a> algorithm to aid in the curing of <a href="/wiki/Synthetic_rubber" title="Synthetic rubber">synthetic rubber</a> was deemed patentable. The <a href="/wiki/Software_patent_debate" title="Software patent debate">patenting of software</a> is highly controversial, and there are highly criticized patents involving algorithms, especially <a href="/wiki/Data_compression" title="Data compression">data compression</a> algorithms, such as <a href="/wiki/Unisys" title="Unisys">Unisys</a>' <a href="/wiki/Graphics_Interchange_Format#Unisys_and_LZW_patent_enforcement" title="Graphics Interchange Format">LZW patent</a>.</p>
+<p>Additionally, some cryptographic algorithms have export restrictions (see <a href="/wiki/Export_of_cryptography" title="Export of cryptography">export of cryptography</a>).</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=17" title="Edit section: Etymology of the word Algorithm">edit</a>]</span> <span class="mw-headline" id="Etymology_of_the_word_Algorithm">Etymology of the word Algorithm</span></h2>
+<p>The word <i>"Algorithm"</i> or <i>"Algorism"</i> in some other writing versions, comes from the name <a href="/wiki/Al-Khw%C4%81rizm%C4%AB" title="Al-Khwārizmī" class="mw-redirect">Al-Khwārizmī</a> (c. 780-850), a <a href="/wiki/Persian_people" title="Persian people">Persian</a> <a href="/wiki/Mathematician" title="Mathematician">mathematician</a>, <a href="/wiki/Astronomer" title="Astronomer">astronomer</a>, <a href="/wiki/Geographer" title="Geographer">geographer</a> and a <a href="/wiki/Scholar" title="Scholar" class="mw-redirect">scholar</a> in the <a href="/wiki/House_of_Wisdom" title="House of Wisdom">House of Wisdom</a> in <a href="/wiki/Baghdad" title="Baghdad">Baghdad</a>, whose name means <i>"the native of <a href="/wiki/Khwarezm" title="Khwarezm">Kharazm</a>"</i>, a city that was part of the <a href="/wiki/Greater_Iran" title="Greater Iran">Greater Iran</a> during his era and now is in modern day <a href="/wiki/Uzbekistan" title="Uzbekistan">Uzbekistan</a><sup id="cite_ref-toomer_18-0" class="reference"><a href="#cite_note-toomer-18"><span>[</span>19<span>]</span></a></sup><sup id="cite_ref-Hogendijk_19-0" class="reference"><a href="#cite_note-Hogendijk-19"><span>[</span>20<span>]</span></a></sup><sup id="cite_ref-Oaks_20-0" class="reference"><a href="#cite_note-Oaks-20"><span>[</span>21<span>]</span></a></sup> He wrote a treatise in Arabic language in the 9th century, which was translated into <a href="/wiki/Latin" title="Latin">Latin</a> in the 12th century under the title <i>Algoritmi de numero Indorum</i>. This title means "Algoritmi on the numbers of the Indians", where "Algoritmi" was the translator's Latinization of Al-Khwarizmi's name.<sup id="cite_ref-21" class="reference"><a href="#cite_note-21"><span>[</span>22<span>]</span></a></sup> Al-Khwarizmi was the most widely read mathematician in Europe in the late Middle Ages, primarily through his other book, the <a href="/wiki/Al-Jabr" title="Al-Jabr" class="mw-redirect">Algebra</a>.<sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span>[</span>23<span>]</span></a></sup> In late medieval Latin, <i>algorismus</i>, the corruption of his name, simply meant the "decimal number system" that is still the meaning of modern English <a href="/wiki/Algorism" title="Algorism">algorism</a>. In 17th century French the word's form, but not its meaning, changed to <i>algorithm</i>, following the model of the word <i>logarithm</i>, this form alluding to the ancient Greek <i>arithmos</i> = arithmetic. English adopted the French very soon afterwards, but it wasn't until the late 19th century that "Algorithm" took on the meaning that it has in modern English.<sup id="cite_ref-23" class="reference"><a href="#cite_note-23"><span>[</span>24<span>]</span></a></sup></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=18" title="Edit section: History: Development of the notion of &quot;algorithm&quot;">edit</a>]</span> <span class="mw-headline" id="History:_Development_of_the_notion_of_.22algorithm.22">History: Development of the notion of "algorithm"</span></h2>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=19" title="Edit section: Discrete and distinguishable symbols">edit</a>]</span> <span class="mw-headline" id="Discrete_and_distinguishable_symbols">Discrete and distinguishable symbols</span></h3>
+<p><b>Tally-marks</b>: To keep track of their flocks, their sacks of grain and their money the ancients used tallying: accumulating stones or marks scratched on sticks, or making discrete symbols in clay. Through the Babylonian and Egyptian use of marks and symbols, eventually <a href="/wiki/Roman_numerals" title="Roman numerals">Roman numerals</a> and the <a href="/wiki/Abacus" title="Abacus">abacus</a> evolved (Dilson, p.&#160;16–41). Tally marks appear prominently in <a href="/wiki/Unary_numeral_system" title="Unary numeral system">unary numeral system</a> arithmetic used in <a href="/wiki/Turing_machine" title="Turing machine">Turing machine</a> and <a href="/wiki/Post%E2%80%93Turing_machine" title="Post–Turing machine">Post–Turing machine</a> computations.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=20" title="Edit section: Manipulation of symbols as &quot;place holders&quot; for numbers: algebra">edit</a>]</span> <span class="mw-headline" id="Manipulation_of_symbols_as_.22place_holders.22_for_numbers:_algebra">Manipulation of symbols as "place holders" for numbers: algebra</span></h3>
+<p>The work of the ancient <a href="/wiki/Greek_mathematics" title="Greek mathematics">Greek geometers</a> (<a href="/wiki/Euclidean_algorithm" title="Euclidean algorithm">Euclidean algorithm</a>), <a href="/wiki/Islamic_mathematics" title="Islamic mathematics" class="mw-redirect">Persian mathematician</a> <a href="/wiki/Muhammad_ibn_M%C5%ABs%C4%81_al-Khw%C4%81rizm%C4%AB" title="Muhammad ibn Mūsā al-Khwārizmī">Al-Khwarizmi</a> (from whose name the terms "<a href="/wiki/Algorism" title="Algorism">algorism</a>" and "algorithm" are derived), and Western European mathematicians culminated in <a href="/wiki/Leibniz" title="Leibniz" class="mw-redirect">Leibniz</a>'s notion of the <a href="/wiki/Calculus_ratiocinator" title="Calculus ratiocinator">calculus ratiocinator</a> (ca 1680):</p>
+<blockquote class="templatequote">
+<div>A good century and a half ahead of his time, Leibniz proposed an algebra of logic, an algebra that would specify the rules for manipulating logical concepts in the manner that ordinary algebra specifies the rules for manipulating numbers.<sup id="cite_ref-24" class="reference"><a href="#cite_note-24"><span>[</span>25<span>]</span></a></sup></div>
+</blockquote>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=21" title="Edit section: Mechanical contrivances with discrete states">edit</a>]</span> <span class="mw-headline" id="Mechanical_contrivances_with_discrete_states">Mechanical contrivances with discrete states</span></h3>
+<p><b>The clock</b>: Bolter credits the invention of the weight-driven <a href="/wiki/Clock" title="Clock">clock</a> as "The key invention [of Europe in the Middle Ages]", in particular the <a href="/wiki/Verge_escapement" title="Verge escapement">verge escapement</a><sup id="cite_ref-25" class="reference"><a href="#cite_note-25"><span>[</span>26<span>]</span></a></sup> that provides us with the tick and tock of a mechanical clock. "The accurate automatic machine"<sup id="cite_ref-26" class="reference"><a href="#cite_note-26"><span>[</span>27<span>]</span></a></sup> led immediately to "mechanical <a href="/wiki/Automata_theory" title="Automata theory">automata</a>" beginning in the 13th century and finally to "computational machines" – the <a href="/wiki/Difference_engine" title="Difference engine">difference engine</a> and <a href="/wiki/Analytical_engine" title="Analytical engine">analytical engines</a> of <a href="/wiki/Charles_Babbage" title="Charles Babbage">Charles Babbage</a> and Countess <a href="/wiki/Ada_Lovelace" title="Ada Lovelace">Ada Lovelace</a>.<sup id="cite_ref-27" class="reference"><a href="#cite_note-27"><span>[</span>28<span>]</span></a></sup></p>
+<p><b>Logical machines 1870 – <a href="/wiki/Stanley_Jevons" title="Stanley Jevons" class="mw-redirect">Stanley Jevons</a>' "logical abacus" and "logical machine"</b>: The technical problem was to reduce <a href="/wiki/Boolean_equation" title="Boolean equation" class="mw-redirect">Boolean equations</a> when presented in a form similar to what are now known as <a href="/wiki/Karnaugh_map" title="Karnaugh map">Karnaugh maps</a>. Jevons (1880) describes first a simple "abacus" of "slips of wood furnished with pins, contrived so that any part or class of the [logical] combinations can be picked out mechanically . . . More recently however I have reduced the system to a completely mechanical form, and have thus embodied the whole of the indirect process of inference in what may be called a <b>Logical Machine</b>" His machine came equipped with "certain moveable wooden rods" and "at the foot are 21 keys like those of a piano [etc] . . .". With this machine he could analyze a "<a href="/wiki/Syllogism" title="Syllogism">syllogism</a> or any other simple logical argument".<sup id="cite_ref-28" class="reference"><a href="#cite_note-28"><span>[</span>29<span>]</span></a></sup></p>
+<p>This machine he displayed in 1870 before the Fellows of the Royal Society.<sup id="cite_ref-29" class="reference"><a href="#cite_note-29"><span>[</span>30<span>]</span></a></sup> Another logician <a href="/wiki/John_Venn" title="John Venn">John Venn</a>, however, in his 1881 <i>Symbolic Logic</i>, turned a jaundiced eye to this effort: "I have no high estimate myself of the interest or importance of what are sometimes called logical machines ... it does not seem to me that any contrivances at present known or likely to be discovered really deserve the name of logical machines"; see more at <a href="/wiki/Algorithm_characterizations" title="Algorithm characterizations">Algorithm characterizations</a>. But not to be outdone he too presented "a plan somewhat analogous, I apprehend, to Prof. Jevon's <i>abacus</i> ... [And] [a]gain, corresponding to Prof. Jevons's logical machine, the following contrivance may be described. I prefer to call it merely a logical-diagram machine ... but I suppose that it could do very completely all that can be rationally expected of any logical machine".<sup id="cite_ref-30" class="reference"><a href="#cite_note-30"><span>[</span>31<span>]</span></a></sup></p>
+<p><b>Jacquard loom, Hollerith punch cards, telegraphy and telephony—the electromechanical relay</b>: Bell and Newell (1971) indicate that the <a href="/wiki/Jacquard_loom" title="Jacquard loom">Jacquard loom</a> (1801), precursor to <a href="/wiki/Hollerith_cards" title="Hollerith cards" class="mw-redirect">Hollerith cards</a> (punch cards, 1887), and "telephone switching technologies" were the roots of a tree leading to the development of the first computers.<sup id="cite_ref-31" class="reference"><a href="#cite_note-31"><span>[</span>32<span>]</span></a></sup> By the mid-19th century the <a href="/wiki/Telegraph" title="Telegraph" class="mw-redirect">telegraph</a>, the precursor of the telephone, was in use throughout the world, its discrete and distinguishable encoding of letters as "dots and dashes" a common sound. By the late 19th century the <a href="/wiki/Ticker_tape" title="Ticker tape">ticker tape</a> (ca 1870s) was in use, as was the use of Hollerith cards in the 1890 U.S. census. Then came the <a href="/wiki/Teletype" title="Teletype" class="mw-redirect">Teletype</a> (ca. 1910) with its punched-paper use of <a href="/wiki/Baudot_code" title="Baudot code">Baudot code</a> on tape.</p>
+<p><b>Telephone-switching networks</b> of electromechanical <a href="/wiki/Relay" title="Relay">relays</a> (invented 1835) was behind the work of <a href="/wiki/George_Stibitz" title="George Stibitz">George Stibitz</a> (1937), the inventor of the digital adding device. As he worked in Bell Laboratories, he observed the "burdensome' use of mechanical calculators with gears. "He went home one evening in 1937 intending to test his idea... When the tinkering was over, Stibitz had constructed a binary adding device".<sup id="cite_ref-32" class="reference"><a href="#cite_note-32"><span>[</span>33<span>]</span></a></sup></p>
+<p>Davis (2000) observes the particular importance of the electromechanical relay (with its two "binary states" <i>open</i> and <i>closed</i>):</p>
+<dl>
+<dd>It was only with the development, beginning in the 1930s, of electromechanical calculators using electrical relays, that machines were built having the scope Babbage had envisioned."<sup id="cite_ref-33" class="reference"><a href="#cite_note-33"><span>[</span>34<span>]</span></a></sup></dd>
+</dl>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=22" title="Edit section: Mathematics during the 1800s up to the mid-1900s">edit</a>]</span> <span class="mw-headline" id="Mathematics_during_the_1800s_up_to_the_mid-1900s">Mathematics during the 1800s up to the mid-1900s</span></h3>
+<p><b>Symbols and rules</b>: In rapid succession the mathematics of <a href="/wiki/George_Boole" title="George Boole">George Boole</a> (1847, 1854), <a href="/wiki/Gottlob_Frege" title="Gottlob Frege">Gottlob Frege</a> (1879), and <a href="/wiki/Giuseppe_Peano" title="Giuseppe Peano">Giuseppe Peano</a> (1888–1889) reduced arithmetic to a sequence of symbols manipulated by rules. Peano's <i>The principles of arithmetic, presented by a new method</i> (1888) was "the first attempt at an axiomatization of mathematics in a symbolic language".<sup id="cite_ref-34" class="reference"><a href="#cite_note-34"><span>[</span>35<span>]</span></a></sup></p>
+<p>But Heijenoort gives Frege (1879) this kudos: Frege's is "perhaps the most important single work ever written in logic. ... in which we see a " 'formula language', that is a <i>lingua characterica</i>, a language written with special symbols, "for pure thought", that is, free from rhetorical embellishments ... constructed from specific symbols that are manipulated according to definite rules".<sup id="cite_ref-35" class="reference"><a href="#cite_note-35"><span>[</span>36<span>]</span></a></sup> The work of Frege was further simplified and amplified by <a href="/wiki/Alfred_North_Whitehead" title="Alfred North Whitehead">Alfred North Whitehead</a> and <a href="/wiki/Bertrand_Russell" title="Bertrand Russell">Bertrand Russell</a> in their <a href="/wiki/Principia_Mathematica" title="Principia Mathematica">Principia Mathematica</a> (1910–1913).</p>
+<p><b>The paradoxes</b>: At the same time a number of disturbing paradoxes appeared in the literature, in particular the <a href="/wiki/Burali-Forti_paradox" title="Burali-Forti paradox">Burali-Forti paradox</a> (1897), the <a href="/wiki/Russell_paradox" title="Russell paradox" class="mw-redirect">Russell paradox</a> (1902–03), and the <a href="/wiki/Richard_Paradox" title="Richard Paradox" class="mw-redirect">Richard Paradox</a>.<sup id="cite_ref-36" class="reference"><a href="#cite_note-36"><span>[</span>37<span>]</span></a></sup> The resultant considerations led to <a href="/wiki/Kurt_G%C3%B6del" title="Kurt Gödel">Kurt Gödel</a>'s paper (1931) — he specifically cites the paradox of the liar—that completely reduces rules of <a href="/wiki/Recursion" title="Recursion">recursion</a> to numbers.</p>
+<p><b>Effective calculability</b>: In an effort to solve the <a href="/wiki/Entscheidungsproblem" title="Entscheidungsproblem">Entscheidungsproblem</a> defined precisely by Hilbert in 1928, mathematicians first set about to define what was meant by an "effective method" or "effective calculation" or "effective calculability" (i.e., a calculation that would succeed). In rapid succession the following appeared: <a href="/wiki/Alonzo_Church" title="Alonzo Church">Alonzo Church</a>, <a href="/wiki/Stephen_Kleene" title="Stephen Kleene" class="mw-redirect">Stephen Kleene</a> and <a href="/wiki/J.B._Rosser" title="J.B. Rosser" class="mw-redirect">J.B. Rosser</a>'s <a href="/wiki/%CE%9B-calculus" title="Λ-calculus" class="mw-redirect">λ-calculus</a><sup id="cite_ref-37" class="reference"><a href="#cite_note-37"><span>[</span>38<span>]</span></a></sup> a finely honed definition of "general recursion" from the work of Gödel acting on suggestions of <a href="/wiki/Jacques_Herbrand" title="Jacques Herbrand">Jacques Herbrand</a> (cf. Gödel's Princeton lectures of 1934) and subsequent simplifications by Kleene.<sup id="cite_ref-38" class="reference"><a href="#cite_note-38"><span>[</span>39<span>]</span></a></sup> Church's proof<sup id="cite_ref-39" class="reference"><a href="#cite_note-39"><span>[</span>40<span>]</span></a></sup> that the Entscheidungsproblem was unsolvable, <a href="/wiki/Emil_Post" title="Emil Post" class="mw-redirect">Emil Post</a>'s definition of effective calculability as a worker mindlessly following a list of instructions to move left or right through a sequence of rooms and while there either mark or erase a paper or observe the paper and make a yes-no decision about the next instruction.<sup id="cite_ref-40" class="reference"><a href="#cite_note-40"><span>[</span>41<span>]</span></a></sup> <a href="/wiki/Alan_Turing" title="Alan Turing">Alan Turing</a>'s proof of that the Entscheidungsproblem was unsolvable by use of his "a- [automatic-] machine"<sup id="cite_ref-41" class="reference"><a href="#cite_note-41"><span>[</span>42<span>]</span></a></sup> – in effect almost identical to Post's "formulation", <a href="/wiki/J._Barkley_Rosser" title="J. Barkley Rosser">J. Barkley Rosser</a>'s definition of "effective method" in terms of "a machine".<sup id="cite_ref-42" class="reference"><a href="#cite_note-42"><span>[</span>43<span>]</span></a></sup> <a href="/wiki/S._C._Kleene" title="S. C. Kleene" class="mw-redirect">S. C. Kleene</a>'s proposal of a precursor to "<a href="/wiki/Church_thesis" title="Church thesis" class="mw-redirect">Church thesis</a>" that he called "Thesis I",<sup id="cite_ref-43" class="reference"><a href="#cite_note-43"><span>[</span>44<span>]</span></a></sup> and a few years later Kleene's renaming his Thesis "Church's Thesis"<sup id="cite_ref-44" class="reference"><a href="#cite_note-44"><span>[</span>45<span>]</span></a></sup> and proposing "Turing's Thesis".<sup id="cite_ref-45" class="reference"><a href="#cite_note-45"><span>[</span>46<span>]</span></a></sup></p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=23" title="Edit section: Emil Post (1936) and Alan Turing (1936–7, 1939)">edit</a>]</span> <span class="mw-headline" id="Emil_Post_.281936.29_and_Alan_Turing_.281936.E2.80.937.2C_1939.29">Emil Post (1936) and Alan Turing (1936–7, 1939)</span></h3>
+<p>Here is a remarkable coincidence of two men not knowing each other but describing a process of men-as-computers working on computations—and they yield virtually identical definitions.</p>
+<p><a href="/wiki/Emil_Post" title="Emil Post" class="mw-redirect">Emil Post</a> (1936) described the actions of a "computer" (human being) as follows:</p>
+<dl>
+<dd>"...two concepts are involved: that of a <i>symbol space</i> in which the work leading from problem to answer is to be carried out, and a fixed unalterable <i>set of directions</i>.</dd>
+</dl>
+<p>His symbol space would be</p>
+<dl>
+<dd>"a two way infinite sequence of spaces or boxes... The problem solver or worker is to move and work in this symbol space, being capable of being in, and operating in but one box at a time.... a box is to admit of but two possible conditions, i.e., being empty or unmarked, and having a single mark in it, say a vertical stroke.</dd>
+</dl>
+<dl>
+<dd>"One box is to be singled out and called the starting point. ...a specific problem is to be given in symbolic form by a finite number of boxes [i.e., INPUT] being marked with a stroke. Likewise the answer [i.e., OUTPUT] is to be given in symbolic form by such a configuration of marked boxes....</dd>
+</dl>
+<dl>
+<dd>"A set of directions applicable to a general problem sets up a deterministic process when applied to each specific problem. This process will terminate only when it comes to the direction of type (C ) [i.e., STOP]".<sup id="cite_ref-46" class="reference"><a href="#cite_note-46"><span>[</span>47<span>]</span></a></sup> See more at <a href="/wiki/Post%E2%80%93Turing_machine" title="Post–Turing machine">Post–Turing machine</a></dd>
+</dl>
+<p><a href="/wiki/Alan_Turing" title="Alan Turing">Alan Turing</a>'s work<sup id="cite_ref-47" class="reference"><a href="#cite_note-47"><span>[</span>48<span>]</span></a></sup> preceded that of Stibitz (1937); it is unknown whether Stibitz knew of the work of Turing. Turing's biographer believed that Turing's use of a typewriter-like model derived from a youthful interest: "Alan had dreamt of inventing typewriters as a boy; Mrs. Turing had a typewriter; and he could well have begun by asking himself what was meant by calling a typewriter 'mechanical'".<sup id="cite_ref-48" class="reference"><a href="#cite_note-48"><span>[</span>49<span>]</span></a></sup> Given the prevalence of Morse code and telegraphy, ticker tape machines, and Teletypes we might conjecture that all were influences.</p>
+<p>Turing—his model of computation is now called a <a href="/wiki/Turing_machine" title="Turing machine">Turing machine</a> — begins, as did Post, with an analysis of a human computer that he whittles down to a simple set of basic motions and "states of mind". But he continues a step further and creates a machine as a model of computation of numbers.<sup id="cite_ref-49" class="reference"><a href="#cite_note-49"><span>[</span>50<span>]</span></a></sup></p>
+<dl>
+<dd>"Computing is normally done by writing certain symbols on paper. We may suppose this paper is divided into squares like a child's arithmetic book....I assume then that the computation is carried out on one-dimensional paper, i.e., on a tape divided into squares. I shall also suppose that the number of symbols which may be printed is finite....</dd>
+</dl>
+<dl>
+<dd>"The behavior of the computer at any moment is determined by the symbols which he is observing, and his "state of mind" at that moment. We may suppose that there is a bound B to the number of symbols or squares which the computer can observe at one moment. If he wishes to observe more, he must use successive observations. We will also suppose that the number of states of mind which need be taken into account is finite...</dd>
+</dl>
+<dl>
+<dd>"Let us imagine that the operations performed by the computer to be split up into 'simple operations' which are so elementary that it is not easy to imagine them further divided".<sup id="cite_ref-Turing_1936.E2.80.937_in_Davis_1965:136_50-0" class="reference"><a href="#cite_note-Turing_1936.E2.80.937_in_Davis_1965:136-50"><span>[</span>51<span>]</span></a></sup></dd>
+</dl>
+<p>Turing's reduction yields the following:</p>
+<dl>
+<dd>"The simple operations must therefore include:
+<dl>
+<dd>"(a) Changes of the symbol on one of the observed squares</dd>
+<dd>"(b) Changes of one of the squares observed to another square within L squares of one of the previously observed squares.</dd>
+</dl>
+</dd>
+</dl>
+<p>"It may be that some of these change necessarily invoke a change of state of mind. The most general single operation must therefore be taken to be one of the following:</p>
+<dl>
+<dd>
+<dl>
+<dd>"(A) A possible change (a) of symbol together with a possible change of state of mind.</dd>
+<dd>"(B) A possible change (b) of observed squares, together with a possible change of state of mind"</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>"We may now construct a machine to do the work of this computer".<sup id="cite_ref-Turing_1936.E2.80.937_in_Davis_1965:136_50-1" class="reference"><a href="#cite_note-Turing_1936.E2.80.937_in_Davis_1965:136-50"><span>[</span>51<span>]</span></a></sup></dd>
+</dl>
+<p>A few years later, Turing expanded his analysis (thesis, definition) with this forceful expression of it:</p>
+<dl>
+<dd>"A function is said to be "effectively calculable" if its values can be found by some purely mechanical process. Although it is fairly easy to get an intuitive grasp of this idea, it is nevertheless desirable to have some more definite, mathematical expressible definition . . . [he discusses the history of the definition pretty much as presented above with respect to Gödel, Herbrand, Kleene, Church, Turing and Post] . . . We may take this statement literally, understanding by a purely mechanical process one which could be carried out by a machine. It is possible to give a mathematical description, in a certain normal form, of the structures of these machines. The development of these ideas leads to the author's definition of a computable function, and to an identification of computability † with effective calculability . . . .
+<dl>
+<dd>"† We shall use the expression "computable function" to mean a function calculable by a machine, and we let "effectively calculable" refer to the intuitive idea without particular identification with any one of these definitions".<sup id="cite_ref-51" class="reference"><a href="#cite_note-51"><span>[</span>52<span>]</span></a></sup></dd>
+</dl>
+</dd>
+</dl>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=24" title="Edit section: J. B. Rosser (1939) and S. C. Kleene (1943)">edit</a>]</span> <span class="mw-headline" id="J._B._Rosser_.281939.29_and_S._C._Kleene_.281943.29">J. B. Rosser (1939) and S. C. Kleene (1943)</span></h3>
+<p><b><a href="/wiki/J._Barkley_Rosser" title="J. Barkley Rosser">J. Barkley Rosser</a></b> boldly defined an 'effective [mathematical] method' in the following manner (boldface added):</p>
+<dl>
+<dd>"'Effective method' is used here in the rather special sense of a method each step of which is precisely determined and which is certain to produce the answer in a finite number of steps. With this special meaning, three different precise definitions have been given to date. [his footnote #5; see discussion immediately below]. The simplest of these to state (due to Post and Turing) says essentially that <b>an effective method of solving certain sets of problems exists if one can build a machine which will then solve any problem of the set with no human intervention beyond inserting the question and (later) reading the answer</b>. All three definitions are equivalent, so it doesn't matter which one is used. Moreover, the fact that all three are equivalent is a very strong argument for the correctness of any one." (Rosser 1939:225–6)</dd>
+</dl>
+<p>Rosser's footnote #5 references the work of (1) Church and Kleene and their definition of λ-definability, in particular Church's use of it in his <i>An Unsolvable Problem of Elementary Number Theory</i> (1936); (2) Herbrand and Gödel and their use of recursion in particular Gödel's use in his famous paper <i>On Formally Undecidable Propositions of Principia Mathematica and Related Systems I</i> (1931); and (3) Post (1936) and Turing (1936–7) in their mechanism-models of computation.</p>
+<p><b><a href="/wiki/Stephen_C._Kleene" title="Stephen C. Kleene" class="mw-redirect">Stephen C. Kleene</a></b> defined as his now-famous "Thesis I" known as the <a href="/wiki/Church%E2%80%93Turing_thesis" title="Church–Turing thesis">Church–Turing thesis</a>. But he did this in the following context (boldface in original):</p>
+<dl>
+<dd>"12. <b>Algorithmic theories</b>... In setting up a complete algorithmic theory, what we do is to describe a procedure, performable for each set of values of the independent variables, which procedure necessarily terminates and in such manner that from the outcome we can read a definite answer, "yes" or "no," to the question, "is the predicate value true?"" (Kleene 1943:273)</dd>
+</dl>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=25" title="Edit section: History after 1950">edit</a>]</span> <span class="mw-headline" id="History_after_1950">History after 1950</span></h3>
+<p>A number of efforts have been directed toward further refinement of the definition of "algorithm", and activity is on-going because of issues surrounding, in particular, <a href="/wiki/Foundations_of_mathematics" title="Foundations of mathematics">foundations of mathematics</a> (especially the <a href="/wiki/Church%E2%80%93Turing_thesis" title="Church–Turing thesis">Church–Turing thesis</a>) and <a href="/wiki/Philosophy_of_mind" title="Philosophy of mind">philosophy of mind</a> (especially arguments around <a href="/wiki/Artificial_intelligence" title="Artificial intelligence">artificial intelligence</a>). For more, see <a href="/wiki/Algorithm_characterizations" title="Algorithm characterizations">Algorithm characterizations</a>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=26" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
+<table class="metadata mbox-small plainlinks" style="border:1px solid #aaa; background-color:#f9f9f9;">
+<tr>
+<td class="mbox-image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Wikiversity-logo.svg/40px-Wikiversity-logo.svg.png" width="40" height="32" /></td>
+<td class="mbox-text" style="">At <a href="/wiki/Wikiversity" title="Wikiversity">Wikiversity</a> you can learn more and teach others about <b>Algorithm</b> at:
+<div style="margin-left: 10px;"><a href="http://en.wikiversity.org/wiki/Topic:Algorithm" class="extiw" title="v:Topic:Algorithm">The Department of Algorithm</a></div>
+</td>
+</tr>
+</table>
+<div style="-moz-column-count:2; column-count:2;">
+<ul>
+<li><a href="/wiki/Abstract_machine" title="Abstract machine">Abstract machine</a></li>
+<li><a href="/wiki/Algorithm_characterizations" title="Algorithm characterizations">Algorithm characterizations</a></li>
+<li><a href="/wiki/Algorithm_design" title="Algorithm design">Algorithm design</a></li>
+<li><a href="/wiki/Algorithmic_efficiency" title="Algorithmic efficiency">Algorithmic efficiency</a></li>
+<li><a href="/wiki/Algorithm_engineering" title="Algorithm engineering">Algorithm engineering</a></li>
+<li><a href="/wiki/Algorithm_examples" title="Algorithm examples">Algorithm examples</a></li>
+<li><a href="/wiki/Algorithmic_music" title="Algorithmic music" class="mw-redirect">Algorithmic music</a></li>
+<li><a href="/wiki/High-level_synthesis" title="High-level synthesis">Algorithmic synthesis</a></li>
+<li><a href="/wiki/Algorithmic_trading" title="Algorithmic trading">Algorithmic trading</a></li>
+<li><a href="/wiki/Data_structure" title="Data structure">Data structure</a></li>
+<li><a href="/wiki/Garbage_In,_Garbage_Out" title="Garbage In, Garbage Out">Garbage In, Garbage Out</a></li>
+<li><a href="/wiki/Heuristics" title="Heuristics" class="mw-redirect">Heuristics</a></li>
+<li><a href="/wiki/List_of_important_publications_in_theoretical_computer_science#Algorithms" title="List of important publications in theoretical computer science">Important algorithm-related publications</a></li>
+<li><i><a href="/wiki/Introduction_to_Algorithms" title="Introduction to Algorithms">Introduction to Algorithms</a></i></li>
+<li><a href="/wiki/List_of_algorithm_general_topics" title="List of algorithm general topics">List of algorithm general topics</a></li>
+<li><a href="/wiki/List_of_algorithms" title="List of algorithms">List of algorithms</a></li>
+<li><a href="/wiki/Numerical_Mathematics_Consortium" title="Numerical Mathematics Consortium">Numerical Mathematics Consortium</a></li>
+<li><a href="/wiki/Partial_function" title="Partial function">Partial function</a></li>
+<li><a href="/wiki/Profiling_(computer_programming)" title="Profiling (computer programming)">Profiling (computer programming)</a></li>
+<li><a href="/wiki/Program_optimization" title="Program optimization">Program optimization</a></li>
+<li><a href="/wiki/Randomized_algorithm" title="Randomized algorithm">Randomized algorithm</a> and <a href="/wiki/Quantum_algorithm" title="Quantum algorithm">quantum algorithm</a></li>
+<li><a href="/wiki/Theory_of_computation" title="Theory of computation">Theory of computation</a>
+<ul>
+<li><a href="/wiki/Computability" title="Computability">Computability</a> (part of <a href="/wiki/Computability_theory" title="Computability theory">computability theory</a>)</li>
+<li><a href="/wiki/Computational_complexity_theory" title="Computational complexity theory">Computational complexity theory</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=27" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h2>
+<div class="references-small references-column-width" style="column-width: 30em; -moz-column-width: 30em; -webkit-column-width: 30em;">
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> Kleene 1943 in Davis 1965:274</li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> Rosser 1939 in Davis 1965:225</li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <a href="http://books.google.com/books?id=sgDHJlafMskC" class="external text" rel="nofollow">Adaptation and learning in automatic systems</a>, page 54, Ya. Z. Tsypkin, Z. J. Nikolic, Academic Press, 1971, <a href="/wiki/Special:BookSources/9780127020501" class="internal mw-magiclink-isbn">ISBN 978-0-12-702050-1</a></li>
+<li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> Boolos and Jeffrey 1974,1999:19</li>
+<li id="cite_note-Minsky_1967:105-4">^ <a href="#cite_ref-Minsky_1967:105_4-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Minsky_1967:105_4-1"><sup><i><b>b</b></i></sup></a> Minsky 1967:105</li>
+<li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> Gurevich 2000:1, 3</li>
+<li id="cite_note-6"><b><a href="#cite_ref-6">^</a></b> Kleene 1952:136</li>
+<li id="cite_note-7"><b><a href="#cite_ref-7">^</a></b> Knuth 1997:5</li>
+<li id="cite_note-8"><b><a href="#cite_ref-8">^</a></b> Boldface added, Kleene 1952:137</li>
+<li id="cite_note-9"><b><a href="#cite_ref-9">^</a></b> Kleene 1952:325</li>
+<li id="cite_note-10"><b><a href="#cite_ref-10">^</a></b> Davis 1958:12–15</li>
+<li id="cite_note-11"><b><a href="#cite_ref-11">^</a></b> Kleene 1952:332</li>
+<li id="cite_note-12"><b><a href="#cite_ref-12">^</a></b> Minsky 1967:186</li>
+<li id="cite_note-13"><b><a href="#cite_ref-13">^</a></b> Sipser 2006:157</li>
+<li id="cite_note-14"><b><a href="#cite_ref-14">^</a></b> Kleene 1952:229 shows that "Definition by cases" is <a href="/wiki/Primitive_recursive" title="Primitive recursive" class="mw-redirect">primitive recursive</a>. CASES requires that the list of testable instances within the CASE definition to be (i) <a href="/wiki/Mutually_exclusive" title="Mutually exclusive" class="mw-redirect">mutually exclusive</a> and (ii) <a href="/wiki/Collectively_exhaustive" title="Collectively exhaustive" class="mw-redirect">collectively exhaustive</a> i.e. it must include or "cover" all possibility. The CASE statement proceeds in numerical order and exits at the first successful test; see more at Boolos–Burgess–Jeffrey Fourth edition 2002:74</li>
+<li id="cite_note-15"><b><a href="#cite_ref-15">^</a></b> An IF-THEN-ELSE or "logical test with branching" is just a CASE instruction reduced to two outcomes: (i) test is successful, (ii) test is unsuccessful. The IF-THEN-ELSE is closely related to the AND-OR-INVERT logic function from which all 16 logical "operators" of one or two variables can be derived; see more at <a href="/wiki/Propositional_formula" title="Propositional formula">Propositional formula</a>. Like definition by cases, a sequence of IF-THEN-ELSE logical tests must be mutually exclusive and collectively exhaustive over the variables tested.</li>
+<li id="cite_note-16"><b><a href="#cite_ref-16">^</a></b> Kowalski 1979</li>
+<li id="cite_note-17"><b><a href="#cite_ref-17">^</a></b> <span class="citation book">Sue Carroll, Taz Daughtrey (2007-07-04). <a href="http://books.google.com/?id=bz_cl3B05IcC&amp;pg=PA282" class="external text" rel="nofollow"><i>Fundamental Concepts for the Software Quality Engineer</i></a>. pp.&#160;282 et seq.. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/9780873897204" title="Special:BookSources/9780873897204">9780873897204</a><span class="printonly">. <a href="http://books.google.com/?id=bz_cl3B05IcC&amp;pg=PA282" class="external free" rel="nofollow">http://books.google.com/?id=bz_cl3B05IcC&amp;pg=PA282</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Fundamental+Concepts+for+the+Software+Quality+Engineer&amp;rft.aulast=Sue+Carroll%2C+Taz+Daughtrey&amp;rft.au=Sue+Carroll%2C+Taz+Daughtrey&amp;rft.date=2007-07-04&amp;rft.pages=pp.%26nbsp%3B282+et+seq.&amp;rft.isbn=9780873897204&amp;rft_id=http%3A%2F%2Fbooks.google.com%2F%3Fid%3Dbz_cl3B05IcC%26pg%3DPA282&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-toomer-18"><b><a href="#cite_ref-toomer_18-0">^</a></b> <a href="#CITEREFToomer1990">Toomer 1990</a></li>
+<li id="cite_note-Hogendijk-19"><b><a href="#cite_ref-Hogendijk_19-0">^</a></b> <span class="citation Journal" id="CITEREFHogendijk1998">Hogendijk, Jan P. (1998). <a href="http://www.kennislink.nl/web/show?id=116543" class="external text" rel="nofollow">"al-Khwarzimi"</a>. <i>Pythagoras</i> <b>38</b> (2): 4–5. <a href="/wiki/International_Standard_Serial_Number" title="International Standard Serial Number">ISSN</a>&#160;<a href="http://www.worldcat.org/issn/0033–4766" class="external text" rel="nofollow">0033–4766</a><span class="printonly">. <a href="http://www.kennislink.nl/web/show?id=116543" class="external free" rel="nofollow">http://www.kennislink.nl/web/show?id=116543</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=al-Khwarzimi&amp;rft.jtitle=Pythagoras&amp;rft.aulast=Hogendijk&amp;rft.aufirst=Jan+P.&amp;rft.au=Hogendijk%2C%26%2332%3BJan+P.&amp;rft.date=1998&amp;rft.volume=38&amp;rft.issue=2&amp;rft.pages=4%E2%80%935&amp;rft_id=http%3A%2F%2Fwww.kennislink.nl%2Fweb%2Fshow%3Fid%3D116543&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span><sup class="noprint Inline-Template"><span title="&#160;since March 2010" style="white-space: nowrap;">[<i><a href="/wiki/Wikipedia:Link_rot" title="Wikipedia:Link rot">dead link</a></i>]</span></sup></li>
+<li id="cite_note-Oaks-20"><b><a href="#cite_ref-Oaks_20-0">^</a></b> <span class="citation web">Oaks, Jeffrey A.. <a href="http://facstaff.uindy.edu/~oaks/MHMC.htm" class="external text" rel="nofollow">"Was al-Khwarizmi an applied algebraist?"</a>. <a href="/wiki/University_of_Indianapolis" title="University of Indianapolis">University of Indianapolis</a><span class="printonly">. <a href="http://facstaff.uindy.edu/~oaks/MHMC.htm" class="external free" rel="nofollow">http://facstaff.uindy.edu/~oaks/MHMC.htm</a></span><span class="reference-accessdate">. Retrieved 2008-05-30</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Was+al-Khwarizmi+an+applied+algebraist%3F&amp;rft.atitle=&amp;rft.aulast=Oaks&amp;rft.aufirst=Jeffrey+A.&amp;rft.au=Oaks%2C%26%2332%3BJeffrey+A.&amp;rft.pub=%5B%5BUniversity+of+Indianapolis%5D%5D&amp;rft_id=http%3A%2F%2Ffacstaff.uindy.edu%2F%7Eoaks%2FMHMC.htm&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-21"><b><a href="#cite_ref-21">^</a></b> <a href="http://books.google.co.uk/books?id=3Sfrxde0CXIC&amp;printsec=frontcover&amp;source=gbs_ge_summary_r&amp;cad=0#v=onepage&amp;q&amp;f=false" class="external text" rel="nofollow">Al-Khwarizmi: The Inventor of Algebra</a>, by Corona Brezina (2006)</li>
+<li id="cite_note-22"><b><a href="#cite_ref-22">^</a></b> <a href="http://www-history.mcs.st-and.ac.uk/Extras/Boyer_Foremost_Text.html" class="external text" rel="nofollow">Foremost mathematical texts in history</a>, according to <a href="/wiki/Carl_B._Boyer" title="Carl B. Boyer" class="mw-redirect">Carl B. Boyer</a>.</li>
+<li id="cite_note-23"><b><a href="#cite_ref-23">^</a></b> Etymology of algorithm at <a href="http://dictionary.reference.com/browse/algorithm" class="external text" rel="nofollow">Dictionary.Reference.com</a></li>
+<li id="cite_note-24"><b><a href="#cite_ref-24">^</a></b> Davis 2000:18</li>
+<li id="cite_note-25"><b><a href="#cite_ref-25">^</a></b> Bolter 1984:24</li>
+<li id="cite_note-26"><b><a href="#cite_ref-26">^</a></b> Bolter 1984:26</li>
+<li id="cite_note-27"><b><a href="#cite_ref-27">^</a></b> Bolter 1984:33–34, 204–206)</li>
+<li id="cite_note-28"><b><a href="#cite_ref-28">^</a></b> All quotes from W. Stanley Jevons 1880 <i>Elementary Lessons in Logic: Deductive and Inductive</i>, Macmillan and Co., London and New York. Republished as a googlebook; cf Jevons 1880:199–201. Louis Couturat 1914 <i>the Algebra of Logic</i>, The Open Court Publishing Company, Chicago and London. Republished as a googlebook; cf Couturat 1914:75–76 gives a few more details; interestingly he compares this to a typewriter as well as a piano. Jevons states that the account is to be found at Jan . 20, 1870 <i>The Proceedings of the Royal Society</i>.</li>
+<li id="cite_note-29"><b><a href="#cite_ref-29">^</a></b> Jevons 1880:199–200</li>
+<li id="cite_note-30"><b><a href="#cite_ref-30">^</a></b> All quotes from John Venn 1881 <i>Symbolic Logic</i>, Macmillan and Co., London. Republished as a googlebook. cf Venn 1881:120–125. The interested reader can find a deeper explanation in those pages.</li>
+<li id="cite_note-31"><b><a href="#cite_ref-31">^</a></b> Bell and Newell diagram 1971:39, cf. Davis 2000</li>
+<li id="cite_note-32"><b><a href="#cite_ref-32">^</a></b> * Melina Hill, Valley News Correspondent, <i>A Tinkerer Gets a Place in History</i>, Valley News West Lebanon NH, Thursday March 31, 1983, page 13.</li>
+<li id="cite_note-33"><b><a href="#cite_ref-33">^</a></b> Davis 2000:14</li>
+<li id="cite_note-34"><b><a href="#cite_ref-34">^</a></b> van Heijenoort 1967:81ff</li>
+<li id="cite_note-35"><b><a href="#cite_ref-35">^</a></b> van Heijenoort's commentary on Frege's <i>Begriffsschrift, a formula language, modeled upon that of arithmetic, for pure thought</i> in van Heijenoort 1967:1</li>
+<li id="cite_note-36"><b><a href="#cite_ref-36">^</a></b> Dixon 1906, cf. Kleene 1952:36–40</li>
+<li id="cite_note-37"><b><a href="#cite_ref-37">^</a></b> cf. footnote in Alonzo Church 1936a in Davis 1965:90 and 1936b in Davis 1965:110</li>
+<li id="cite_note-38"><b><a href="#cite_ref-38">^</a></b> Kleene 1935–6 in Davis 1965:237ff, Kleene 1943 in Davis 1965:255ff</li>
+<li id="cite_note-39"><b><a href="#cite_ref-39">^</a></b> Church 1936 in Davis 1965:88ff</li>
+<li id="cite_note-40"><b><a href="#cite_ref-40">^</a></b> cf. "Formulation I", Post 1936 in Davis 1965:289–290</li>
+<li id="cite_note-41"><b><a href="#cite_ref-41">^</a></b> Turing 1936–7 in Davis 1965:116ff</li>
+<li id="cite_note-42"><b><a href="#cite_ref-42">^</a></b> Rosser 1939 in Davis 1965:226</li>
+<li id="cite_note-43"><b><a href="#cite_ref-43">^</a></b> Kleene 1943 in Davis 1965:273–274</li>
+<li id="cite_note-44"><b><a href="#cite_ref-44">^</a></b> Kleene 1952:300, 317</li>
+<li id="cite_note-45"><b><a href="#cite_ref-45">^</a></b> Kleene 1952:376</li>
+<li id="cite_note-46"><b><a href="#cite_ref-46">^</a></b> Turing 1936–7 in Davis 1965:289–290</li>
+<li id="cite_note-47"><b><a href="#cite_ref-47">^</a></b> Turing 1936 in Davis 1965, Turing 1939 in Davis 1965:160</li>
+<li id="cite_note-48"><b><a href="#cite_ref-48">^</a></b> Hodges, p. 96</li>
+<li id="cite_note-49"><b><a href="#cite_ref-49">^</a></b> Turing 1936–7:116)</li>
+<li id="cite_note-Turing_1936.E2.80.937_in_Davis_1965:136-50">^ <a href="#cite_ref-Turing_1936.E2.80.937_in_Davis_1965:136_50-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Turing_1936.E2.80.937_in_Davis_1965:136_50-1"><sup><i><b>b</b></i></sup></a> Turing 1936–7 in Davis 1965:136</li>
+<li id="cite_note-51"><b><a href="#cite_ref-51">^</a></b> Turing 1939 in Davis 1965:160</li>
+</ol>
+</div>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=28" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<ul>
+<li>Axt, P. (1959) On a Subrecursive Hierarchy and Primitive Recursive Degrees, <i>Transactions of the American Mathematical Society</i> 92, pp.&#160;85–105</li>
+<li>Bell, C. Gordon and Newell, Allen (1971), <i>Computer Structures: Readings and Examples</i>, McGraw-Hill Book Company, New York. <a href="/wiki/Special:BookSources/0070043574" class="internal mw-magiclink-isbn">ISBN 0-07-004357-4</a>}.</li>
+<li><span class="citation Journal"><a href="/wiki/Andreas_Blass" title="Andreas Blass">Blass, Andreas</a>; <a href="/wiki/Yuri_Gurevich" title="Yuri Gurevich">Gurevich, Yuri</a> (2003). <a href="http://research.microsoft.com/~gurevich/Opera/164.pdf" class="external text" rel="nofollow">"Algorithms: A Quest for Absolute Definitions"</a>. <i>Bulletin of European Association for Theoretical Computer Science</i> <b>81</b><span class="printonly">. <a href="http://research.microsoft.com/~gurevich/Opera/164.pdf" class="external free" rel="nofollow">http://research.microsoft.com/~gurevich/Opera/164.pdf</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Algorithms%3A+A+Quest+for+Absolute+Definitions&amp;rft.jtitle=Bulletin+of+European+Association+for+Theoretical+Computer+Science&amp;rft.aulast=Blass&amp;rft.aufirst=Andreas&amp;rft.au=Blass%2C%26%2332%3BAndreas&amp;rft.au=Gurevich%2C%26%2332%3BYuri&amp;rft.date=2003&amp;rft.volume=81&amp;rft_id=http%3A%2F%2Fresearch.microsoft.com%2F%7Egurevich%2FOpera%2F164.pdf&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Includes an excellent bibliography of 56 references.</li>
+<li><span class="citation book" id="CITEREFBoolosJeffrey1974.2C_1999"><a href="/wiki/George_Boolos" title="George Boolos">Boolos, George</a>; <a href="/wiki/Richard_Jeffrey" title="Richard Jeffrey">Jeffrey, Richard</a> (1974, 1980, 1989, 1999). <i>Computability and Logic</i> (4th ed.). Cambridge University Press, London. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-521-20402-X" title="Special:BookSources/0-521-20402-X">0-521-20402-X</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Computability+and+Logic&amp;rft.aulast=Boolos&amp;rft.aufirst=George&amp;rft.au=Boolos%2C%26%2332%3BGeorge&amp;rft.au=Jeffrey%2C%26%2332%3BRichard&amp;rft.date=1974%2C+1980%2C+1989%2C+1999&amp;rft.edition=4th&amp;rft.pub=Cambridge+University+Press%2C+London&amp;rft.isbn=0-521-20402-X&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span>: cf. Chapter 3 <i>Turing machines</i> where they discuss "certain enumerable sets not effectively (mechanically) enumerable".</li>
+<li>Burgin, M. <i>Super-recursive algorithms</i>, Monographs in computer science, Springer, 2005. <a href="/wiki/Special:BookSources/0387955690" class="internal mw-magiclink-isbn">ISBN 0-387-95569-0</a></li>
+<li>Campagnolo, M.L., Moore, C., and Costa, J.F. (2000) An analog characterization of the subrecursive functions. In <i>Proc. of the 4th Conference on Real Numbers and Computers</i>, Odense University, pp.&#160;91–109</li>
+<li><span class="citation Journal"><a href="/wiki/Alonzo_Church" title="Alonzo Church">Church, Alonzo</a> (1936a). <a href="http://jstor.org/stable/2371045" class="external text" rel="nofollow">"An Unsolvable Problem of Elementary Number Theory"</a>. <i>The American Journal of Mathematics</i> <b>58</b> (2): 345–363. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a href="http://dx.doi.org/10.2307%2F2371045" class="external text" rel="nofollow">10.2307/2371045</a><span class="printonly">. <a href="http://jstor.org/stable/2371045" class="external free" rel="nofollow">http://jstor.org/stable/2371045</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=An+Unsolvable+Problem+of+Elementary+Number+Theory&amp;rft.jtitle=The+American+Journal+of+Mathematics&amp;rft.aulast=Church&amp;rft.aufirst=Alonzo&amp;rft.au=Church%2C%26%2332%3BAlonzo&amp;rft.date=1936a&amp;rft.volume=58&amp;rft.issue=2&amp;rft.pages=345%E2%80%93363&amp;rft_id=info:doi/10.2307%2F2371045&amp;rft_id=http%3A%2F%2Fjstor.org%2Fstable%2F2371045&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Reprinted in <i>The Undecidable</i>, p.&#160;89ff. The first expression of "Church's Thesis". See in particular page 100 (<i>The Undecidable</i>) where he defines the notion of "effective calculability" in terms of "an algorithm", and he uses the word "terminates", etc.</li>
+<li><span class="citation Journal"><a href="/wiki/Alonzo_Church" title="Alonzo Church">Church, Alonzo</a> (1936b). <a href="http://jstor.org/stable/2269326" class="external text" rel="nofollow">"A Note on the Entscheidungsproblem"</a>. <i>The Journal of Symbolic Logic</i> <b>1</b> (1): 40–41. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a href="http://dx.doi.org/10.2307%2F2269326" class="external text" rel="nofollow">10.2307/2269326</a><span class="printonly">. <a href="http://jstor.org/stable/2269326" class="external free" rel="nofollow">http://jstor.org/stable/2269326</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=A+Note+on+the+Entscheidungsproblem&amp;rft.jtitle=The+Journal+of+Symbolic+Logic&amp;rft.aulast=Church&amp;rft.aufirst=Alonzo&amp;rft.au=Church%2C%26%2332%3BAlonzo&amp;rft.date=1936b&amp;rft.volume=1&amp;rft.issue=1&amp;rft.pages=40%E2%80%9341&amp;rft_id=info:doi/10.2307%2F2269326&amp;rft_id=http%3A%2F%2Fjstor.org%2Fstable%2F2269326&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> <span class="citation Journal">Church, Alonzo (1936). <a href="http://jstor.org/stable/2269030" class="external text" rel="nofollow">"Correction to a Note on the Entscheidungsproblem"</a>. <i>The Journal of Symbolic Logic</i> <b>1</b> (3): 101–102. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a href="http://dx.doi.org/10.2307%2F2269030" class="external text" rel="nofollow">10.2307/2269030</a><span class="printonly">. <a href="http://jstor.org/stable/2269030" class="external free" rel="nofollow">http://jstor.org/stable/2269030</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Correction+to+a+Note+on+the+Entscheidungsproblem&amp;rft.jtitle=The+Journal+of+Symbolic+Logic&amp;rft.aulast=Church&amp;rft.aufirst=Alonzo&amp;rft.au=Church%2C%26%2332%3BAlonzo&amp;rft.date=1936&amp;rft.volume=1&amp;rft.issue=3&amp;rft.pages=101%E2%80%93102&amp;rft_id=info:doi/10.2307%2F2269030&amp;rft_id=http%3A%2F%2Fjstor.org%2Fstable%2F2269030&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Reprinted in <i>The Undecidable</i>, p.&#160;110ff. Church shows that the Entscheidungsproblem is unsolvable in about 3 pages of text and 3 pages of footnotes.</li>
+<li><span class="citation book">Daffa', Ali Abdullah al- (1977). <i>The Muslim contribution to mathematics</i>. London: Croom Helm. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-85664-464-1" title="Special:BookSources/0-85664-464-1">0-85664-464-1</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+Muslim+contribution+to+mathematics&amp;rft.aulast=Daffa%27&amp;rft.aufirst=Ali+Abdullah+al-&amp;rft.au=Daffa%27%2C%26%2332%3BAli+Abdullah+al-&amp;rft.date=1977&amp;rft.place=London&amp;rft.pub=Croom+Helm&amp;rft.isbn=0-85664-464-1&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span></li>
+<li><span class="citation book"><a href="/wiki/Martin_Davis" title="Martin Davis">Davis, Martin</a> (1965). <i>The Undecidable: Basic Papers On Undecidable Propositions, Unsolvable Problems and Computable Functions</i>. New York: Raven Press. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0486432289" title="Special:BookSources/0486432289">0486432289</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+Undecidable%3A+Basic+Papers+On+Undecidable+Propositions%2C+Unsolvable+Problems+and+Computable+Functions&amp;rft.aulast=Davis&amp;rft.aufirst=Martin&amp;rft.au=Davis%2C%26%2332%3BMartin&amp;rft.date=1965&amp;rft.place=New+York&amp;rft.pub=Raven+Press&amp;rft.isbn=0486432289&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Davis gives commentary before each article. Papers of <a href="/wiki/G%C3%B6del" title="Gödel" class="mw-redirect">Gödel</a>, <a href="/wiki/Alonzo_Church" title="Alonzo Church">Alonzo Church</a>, <a href="/wiki/Alan_Turing" title="Alan Turing">Turing</a>, <a href="/wiki/J._Barkley_Rosser" title="J. Barkley Rosser">Rosser</a>, <a href="/wiki/Kleene" title="Kleene" class="mw-redirect">Kleene</a>, and <a href="/wiki/Emil_Post" title="Emil Post" class="mw-redirect">Emil Post</a> are included; those cited in the article are listed here by author's name.</li>
+<li><span class="citation book"><a href="/wiki/Martin_Davis" title="Martin Davis">Davis, Martin</a> (2000). <i>Engines of Logic: Mathematicians and the Origin of the Computer</i>. New York: W. W. Nortion. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0393322297" title="Special:BookSources/0393322297">0393322297</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Engines+of+Logic%3A+Mathematicians+and+the+Origin+of+the+Computer&amp;rft.aulast=Davis&amp;rft.aufirst=Martin&amp;rft.au=Davis%2C%26%2332%3BMartin&amp;rft.date=2000&amp;rft.place=New+York&amp;rft.pub=W.+W.+Nortion&amp;rft.isbn=0393322297&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Davis offers concise biographies of <a href="/wiki/Leibniz" title="Leibniz" class="mw-redirect">Leibniz</a>, <a href="/wiki/Boole" title="Boole" class="mw-redirect">Boole</a>, <a href="/wiki/Frege" title="Frege" class="mw-redirect">Frege</a>, <a href="/wiki/Georg_Cantor" title="Georg Cantor">Cantor</a>, <a href="/wiki/Hilbert" title="Hilbert" class="mw-redirect">Hilbert</a>, Gödel and Turing with <a href="/wiki/Von_Neumann" title="Von Neumann" class="mw-redirect">von Neumann</a> as the show-stealing villain. Very brief bios of <a href="/wiki/Joseph-Marie_Jacquard" title="Joseph-Marie Jacquard" class="mw-redirect">Joseph-Marie Jacquard</a>, <a href="/wiki/Babbage" title="Babbage" class="mw-redirect">Babbage</a>, <a href="/wiki/Ada_Lovelace" title="Ada Lovelace">Ada Lovelace</a>, <a href="/wiki/Claude_Shannon" title="Claude Shannon">Claude Shannon</a>, <a href="/wiki/Howard_Aiken" title="Howard Aiken" class="mw-redirect">Howard Aiken</a>, etc.</li>
+<li><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/15px-PD-icon.svg.png" width="15" height="15" />&#160;<i>This article incorporates <a href="/wiki/Copyright_status_of_work_by_the_U.S._government" title="Copyright status of work by the U.S. government">public domain material</a> from the <a href="/wiki/National_Institute_of_Standards_and_Technology" title="National Institute of Standards and Technology">NIST</a></i> document <a href="http://www.nist.gov/dads/HTML/algorithm.html" class="external text" rel="nofollow">"algorithm"</a> by Paul E. Black (<a href="/wiki/Dictionary_of_Algorithms_and_Data_Structures" title="Dictionary of Algorithms and Data Structures">Dictionary of Algorithms and Data Structures</a>).</li>
+<li><span class="citation book"><a href="/wiki/Daniel_Dennett" title="Daniel Dennett">Dennett, Daniel</a> (1995). <i>Darwin's Dangerous Idea</i>. New York: Touchstone/Simon &amp; Schuster. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0684802902" title="Special:BookSources/0684802902">0684802902</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Darwin%27s+Dangerous+Idea&amp;rft.aulast=Dennett&amp;rft.aufirst=Daniel&amp;rft.au=Dennett%2C%26%2332%3BDaniel&amp;rft.date=1995&amp;rft.place=New+York&amp;rft.pub=Touchstone%2FSimon+%26+Schuster&amp;rft.isbn=0684802902&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span></li>
+<li><a href="/wiki/Yuri_Gurevich" title="Yuri Gurevich">Yuri Gurevich</a>, <a href="http://research.microsoft.com/~gurevich/Opera/141.pdf" class="external text" rel="nofollow"><i>Sequential Abstract State Machines Capture Sequential Algorithms</i></a>, ACM Transactions on Computational Logic, Vol 1, no 1 (July 2000), pages 77–111. Includes bibliography of 33 sources.</li>
+<li><span class="citation Journal"><a href="/wiki/Stephen_Kleene" title="Stephen Kleene" class="mw-redirect">Kleene C., Stephen</a> (1936). "General Recursive Functions of Natural Numbers". <i>Mathematische Annalen</i> <b>112</b> (5): 727–742. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a href="http://dx.doi.org/10.1007%2FBF01565439" class="external text" rel="nofollow">10.1007/BF01565439</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=General+Recursive+Functions+of+Natural+Numbers&amp;rft.jtitle=Mathematische+Annalen&amp;rft.aulast=Kleene+C.&amp;rft.aufirst=Stephen&amp;rft.au=Kleene+C.%2C%26%2332%3BStephen&amp;rft.date=1936&amp;rft.volume=112&amp;rft.issue=5&amp;rft.pages=727%E2%80%93742&amp;rft_id=info:doi/10.1007%2FBF01565439&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Presented to the American Mathematical Society, September 1935. Reprinted in <i>The Undecidable</i>, p.&#160;237ff. Kleene's definition of "general recursion" (known now as mu-recursion) was used by Church in his 1935 paper <i>An Unsolvable Problem of Elementary Number Theory</i> that proved the "decision problem" to be "undecidable" (i.e., a negative result).</li>
+<li><span class="citation Journal"><a href="/wiki/Stephen_Kleene" title="Stephen Kleene" class="mw-redirect">Kleene C., Stephen</a> (1943). <a href="http://jstor.org/stable/1990131" class="external text" rel="nofollow">"Recursive Predicates and Quantifiers"</a>. <i>American Mathematical Society Transactions</i> <b>54</b> (1): 41–73. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a href="http://dx.doi.org/10.2307%2F1990131" class="external text" rel="nofollow">10.2307/1990131</a><span class="printonly">. <a href="http://jstor.org/stable/1990131" class="external free" rel="nofollow">http://jstor.org/stable/1990131</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Recursive+Predicates+and+Quantifiers&amp;rft.jtitle=American+Mathematical+Society+Transactions&amp;rft.aulast=Kleene+C.&amp;rft.aufirst=Stephen&amp;rft.au=Kleene+C.%2C%26%2332%3BStephen&amp;rft.date=1943&amp;rft.volume=54&amp;rft.issue=1&amp;rft.pages=41%E2%80%9373&amp;rft_id=info:doi/10.2307%2F1990131&amp;rft_id=http%3A%2F%2Fjstor.org%2Fstable%2F1990131&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Reprinted in <i>The Undecidable</i>, p.&#160;255ff. Kleene refined his definition of "general recursion" and proceeded in his chapter "12. Algorithmic theories" to posit "Thesis I" (p.&#160;274); he would later repeat this thesis (in Kleene 1952:300) and name it "Church's Thesis"(Kleene 1952:317) (i.e., the <a href="/wiki/Church_thesis" title="Church thesis" class="mw-redirect">Church thesis</a>).</li>
+<li><span class="citation book"><a href="/wiki/Kleene" title="Kleene" class="mw-redirect">Kleene, Stephen C.</a> (First Edition 1952). <i>Introduction to Metamathematics</i> (Tenth Edition 1991 ed.). North-Holland Publishing Company. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0720421039" title="Special:BookSources/0720421039">0720421039</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+Metamathematics&amp;rft.aulast=Kleene&amp;rft.aufirst=Stephen+C.&amp;rft.au=Kleene%2C%26%2332%3BStephen+C.&amp;rft.date=First+Edition+1952&amp;rft.edition=Tenth+Edition+1991&amp;rft.pub=North-Holland+Publishing+Company&amp;rft.isbn=0720421039&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Excellent—accessible, readable—reference source for mathematical "foundations".</li>
+<li><span class="citation book"><a href="/wiki/Donald_Knuth" title="Donald Knuth">Knuth, Donald</a> (1997). <i>Fundamental Algorithms, Third Edition</i>. Reading, Massachusetts: Addison–Wesley. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0201896834" title="Special:BookSources/0201896834">0201896834</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Fundamental+Algorithms%2C+Third+Edition&amp;rft.aulast=Knuth&amp;rft.aufirst=Donald&amp;rft.au=Knuth%2C%26%2332%3BDonald&amp;rft.date=1997&amp;rft.place=Reading%2C+Massachusetts&amp;rft.pub=Addison%E2%80%93Wesley&amp;rft.isbn=0201896834&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span></li>
+<li>Kosovsky, N. K. <i>Elements of Mathematical Logic and its Application to the theory of Subrecursive Algorithms</i>, LSU Publ., Leningrad, 1981</li>
+<li><span class="citation Journal"><a href="/wiki/Robert_Kowalski" title="Robert Kowalski">Kowalski, Robert</a> (1979). "Algorithm=Logic+Control". <i><a href="/wiki/Communications_of_the_ACM" title="Communications of the ACM">Communications of the ACM</a></i> <b>22</b> (7): 424–436. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a href="http://dx.doi.org/10.1145%2F359131.359136" class="external text" rel="nofollow">10.1145/359131.359136</a>. ISSN 0001-0782.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Algorithm%3DLogic%2BControl&amp;rft.jtitle=%5B%5BCommunications+of+the+ACM%5D%5D&amp;rft.aulast=Kowalski&amp;rft.aufirst=Robert&amp;rft.au=Kowalski%2C%26%2332%3BRobert&amp;rft.date=1979&amp;rft.volume=22&amp;rft.issue=7&amp;rft.pages=424%E2%80%93436&amp;rft_id=info:doi/10.1145%2F359131.359136&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span></li>
+<li><a href="/wiki/A._A._Markov" title="A. A. Markov" class="mw-redirect">A. A. Markov</a> (1954) <i>Theory of algorithms</i>. [Translated by Jacques J. Schorr-Kon and PST staff] Imprint Moscow, Academy of Sciences of the USSR, 1954 [i.e., Jerusalem, Israel Program for Scientific Translations, 1961; available from the Office of Technical Services, U.S. Dept. of Commerce, Washington] Description 444 p.&#160;28&#160;cm. Added t.p. in Russian Translation of Works of the Mathematical Institute, Academy of Sciences of the USSR, v. 42. Original title: Teoriya algerifmov. [QA248.M2943 Dartmouth College library. U.S. Dept. of Commerce, Office of Technical Services, number OTS 60-51085.]</li>
+<li><span class="citation book"><a href="/wiki/Marvin_Minsky" title="Marvin Minsky">Minsky, Marvin</a> (1967). <i>Computation: Finite and Infinite Machines</i> (First ed.). Prentice-Hall, Englewood Cliffs, NJ. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0131654497" title="Special:BookSources/0131654497">0131654497</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Computation%3A+Finite+and+Infinite+Machines&amp;rft.aulast=Minsky&amp;rft.aufirst=Marvin&amp;rft.au=Minsky%2C%26%2332%3BMarvin&amp;rft.date=1967&amp;rft.edition=First&amp;rft.pub=Prentice-Hall%2C+Englewood+Cliffs%2C+NJ&amp;rft.isbn=0131654497&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Minsky expands his "...idea of an algorithm—an effective procedure..." in chapter 5.1 <i>Computability, Effective Procedures and Algorithms. Infinite machines."</i></li>
+<li><span class="citation Journal"><a href="/wiki/Emil_Post" title="Emil Post" class="mw-redirect">Post, Emil</a> (1936). <a href="http://jstor.org/stable/2269031" class="external text" rel="nofollow">"Finite Combinatory Processes, Formulation I"</a>. <i>The Journal of Symbolic Logic</i> <b>1</b> (3): 103–105. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a href="http://dx.doi.org/10.2307%2F2269031" class="external text" rel="nofollow">10.2307/2269031</a><span class="printonly">. <a href="http://jstor.org/stable/2269031" class="external free" rel="nofollow">http://jstor.org/stable/2269031</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Finite+Combinatory+Processes%2C+Formulation+I&amp;rft.jtitle=The+Journal+of+Symbolic+Logic&amp;rft.aulast=Post&amp;rft.aufirst=Emil&amp;rft.au=Post%2C%26%2332%3BEmil&amp;rft.date=1936&amp;rft.volume=1&amp;rft.issue=3&amp;rft.pages=103%E2%80%93105&amp;rft_id=info:doi/10.2307%2F2269031&amp;rft_id=http%3A%2F%2Fjstor.org%2Fstable%2F2269031&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Reprinted in <i>The Undecidable</i>, p. 289ff. Post defines a simple algorithmic-like process of a man writing marks or erasing marks and going from box to box and eventually halting, as he follows a list of simple instructions. This is cited by Kleene as one source of his "Thesis I", the so-called <a href="/wiki/Church%E2%80%93Turing_thesis" title="Church–Turing thesis">Church–Turing thesis</a>.</li>
+<li><span class="citation Journal"><a href="/wiki/J.B._Rosser" title="J.B. Rosser" class="mw-redirect">Rosser, J.B.</a> (1939). "An Informal Exposition of Proofs of Godel's Theorem and Church's Theorem". <i>Journal of Symbolic Logic</i> <b>4</b>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=An+Informal+Exposition+of+Proofs+of+Godel%27s+Theorem+and+Church%27s+Theorem&amp;rft.jtitle=Journal+of+Symbolic+Logic&amp;rft.aulast=Rosser&amp;rft.aufirst=J.B.&amp;rft.au=Rosser%2C%26%2332%3BJ.B.&amp;rft.date=1939&amp;rft.volume=4&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Reprinted in <i>The Undecidable</i>, p.&#160;223ff. Herein is Rosser's famous definition of "effective method": "...a method each step of which is precisely predetermined and which is certain to produce the answer in a finite number of steps... a machine which will then solve any problem of the set with no human intervention beyond inserting the question and (later) reading the answer" (p.&#160;225–226, <i>The Undecidable</i>)</li>
+<li><span class="citation book">Sipser, Michael (2006). <i>Introduction to the Theory of Computation</i>. PWS Publishing Company. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/053494728X" title="Special:BookSources/053494728X">053494728X</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+the+Theory+of+Computation&amp;rft.aulast=Sipser&amp;rft.aufirst=Michael&amp;rft.au=Sipser%2C%26%2332%3BMichael&amp;rft.date=2006&amp;rft.pub=PWS+Publishing+Company&amp;rft.isbn=053494728X&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span></li>
+<li><span class="citation book">Stone, Harold S. (1972). <i>Introduction to Computer Organization and Data Structures</i> (1972 ed.). McGraw-Hill, New York. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0070617260" title="Special:BookSources/0070617260">0070617260</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+Computer+Organization+and+Data+Structures&amp;rft.aulast=Stone&amp;rft.aufirst=Harold+S.&amp;rft.au=Stone%2C%26%2332%3BHarold+S.&amp;rft.date=1972&amp;rft.edition=1972&amp;rft.pub=McGraw-Hill%2C+New+York&amp;rft.isbn=0070617260&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Cf. in particular the first chapter titled: <i>Algorithms, Turing Machines, and Programs</i>. His succinct informal definition: "...any sequence of instructions that can be obeyed by a robot, is called an <i>algorithm</i>" (p.&#160;4).</li>
+<li><span class="citation Journal"><a href="/wiki/A._M._Turing" title="A. M. Turing" class="mw-redirect">Turing, Alan M.</a> (1936–7). "On Computable Numbers, With An Application to the Entscheidungsproblem". <i><a href="/wiki/Proceedings_of_the_London_Mathematical_Society" title="Proceedings of the London Mathematical Society" class="mw-redirect">Proceedings of the London Mathematical Society</a>, Series 2</i> <b>42</b>: 230–265. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a href="http://dx.doi.org/10.1112%2Fplms%2Fs2-42.1.230" class="external text" rel="nofollow">10.1112/plms/s2-42.1.230</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=On+Computable+Numbers%2C+With+An+Application+to+the+Entscheidungsproblem&amp;rft.jtitle=%5B%5BProceedings+of+the+London+Mathematical+Society%5D%5D%2C+Series+2&amp;rft.aulast=Turing&amp;rft.aufirst=Alan+M.&amp;rft.au=Turing%2C%26%2332%3BAlan+M.&amp;rft.date=1936%E2%80%937&amp;rft.volume=42&amp;rft.pages=230%E2%80%93265&amp;rft_id=info:doi/10.1112%2Fplms%2Fs2-42.1.230&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span>. Corrections, ibid, vol. 43(1937) pp.&#160;544–546. Reprinted in <i>The Undecidable</i>, p.&#160;116ff. Turing's famous paper completed as a Master's dissertation while at King's College Cambridge UK.</li>
+<li><span class="citation Journal"><a href="/wiki/A._M._Turing" title="A. M. Turing" class="mw-redirect">Turing, Alan M.</a> (1939). "Systems of Logic Based on Ordinals". <i>Proceedings of the London Mathematical Society, Series 2</i> <b>45</b>: 161–228. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a href="http://dx.doi.org/10.1112%2Fplms%2Fs2-45.1.161" class="external text" rel="nofollow">10.1112/plms/s2-45.1.161</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Systems+of+Logic+Based+on+Ordinals&amp;rft.jtitle=Proceedings+of+the+London+Mathematical+Society%2C+Series+2&amp;rft.aulast=Turing&amp;rft.aufirst=Alan+M.&amp;rft.au=Turing%2C%26%2332%3BAlan+M.&amp;rft.date=1939&amp;rft.volume=45&amp;rft.pages=161%E2%80%93228&amp;rft_id=info:doi/10.1112%2Fplms%2Fs2-45.1.161&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span> Reprinted in <i>The Undecidable</i>, p.&#160;155ff. Turing's paper that defined "the oracle" was his PhD thesis while at Princeton USA.</li>
+<li><a href="/wiki/United_States_Patent_and_Trademark_Office" title="United States Patent and Trademark Office">United States Patent and Trademark Office</a> (2006), <a href="http://www.uspto.gov/web/offices/pac/mpep/documents/2100_2106_02.htm" class="external text" rel="nofollow"><i>2106.02 **&gt;Mathematical Algorithms&lt; - 2100 Patentability</i></a>, Manual of Patent Examining Procedure (MPEP). Latest revision August 2006</li>
+</ul>
+<h3><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=29" title="Edit section: Secondary references">edit</a>]</span> <span class="mw-headline" id="Secondary_references">Secondary references</span></h3>
+<ul>
+<li><span class="citation book">Bolter, David J. (1984). <i>Turing's Man: Western Culture in the Computer Age</i> (1984 ed.). The University of North Carolina Press, Chapel Hill NC. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0807815640" title="Special:BookSources/0807815640">0807815640</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Turing%27s+Man%3A+Western+Culture+in+the+Computer+Age&amp;rft.aulast=Bolter&amp;rft.aufirst=David+J.&amp;rft.au=Bolter%2C%26%2332%3BDavid+J.&amp;rft.date=1984&amp;rft.edition=1984&amp;rft.pub=The+University+of+North+Carolina+Press%2C+Chapel+Hill+NC&amp;rft.isbn=0807815640&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span>, <a href="/wiki/Special:BookSources/0807841080" class="internal mw-magiclink-isbn">ISBN 0-8078-4108-0</a> pbk.</li>
+<li><span class="citation book"><a href="/w/index.php?title=Dilson&amp;action=edit&amp;redlink=1" class="new" title="Dilson (page does not exist)">Dilson, Jesse</a> (2007). <i>The Abacus</i> ((1968,1994) ed.). St. Martin's Press, NY. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/031210409X" title="Special:BookSources/031210409X">031210409X</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+Abacus&amp;rft.aulast=Dilson&amp;rft.aufirst=Jesse&amp;rft.au=Dilson%2C%26%2332%3BJesse&amp;rft.date=2007&amp;rft.edition=%281968%2C1994%29&amp;rft.pub=St.+Martin%27s+Press%2C+NY&amp;rft.isbn=031210409X&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span>, <a href="/wiki/Special:BookSources/031210409X" class="internal mw-magiclink-isbn">ISBN 0-312-10409-X</a> (pbk.)</li>
+<li><span class="citation book"><a href="/w/index.php?title=Van_Heijenoort&amp;action=edit&amp;redlink=1" class="new" title="Van Heijenoort (page does not exist)">van Heijenoort, Jean</a> (2001). <i>From Frege to Gödel, A Source Book in Mathematical Logic, 1879–1931</i> ((1967) ed.). Harvard University Press, Cambridge, MA. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0674324498" title="Special:BookSources/0674324498">0674324498</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=From+Frege+to+G%C3%B6del%2C+A+Source+Book+in+Mathematical+Logic%2C+1879%E2%80%931931&amp;rft.aulast=van+Heijenoort&amp;rft.aufirst=Jean&amp;rft.au=van+Heijenoort%2C%26%2332%3BJean&amp;rft.date=2001&amp;rft.edition=%281967%29&amp;rft.pub=Harvard+University+Press%2C+Cambridge%2C+MA&amp;rft.isbn=0674324498&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span>, 3rd edition 1976[?], <a href="/wiki/Special:BookSources/0674324498" class="internal mw-magiclink-isbn">ISBN 0-674-32449-8</a> (pbk.)</li>
+<li><span class="citation book">Hodges, Andrew (1983). <i>Alan Turing: The Enigma</i> ((1983) ed.). Simon and Schuster, New York. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0671492071" title="Special:BookSources/0671492071">0671492071</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Alan+Turing%3A+The+Enigma&amp;rft.aulast=Hodges&amp;rft.aufirst=Andrew&amp;rft.au=Hodges%2C%26%2332%3BAndrew&amp;rft.date=1983&amp;rft.edition=%281983%29&amp;rft.pub=Simon+and+Schuster%2C+New+York&amp;rft.isbn=0671492071&amp;rfr_id=info:sid/en.wikipedia.org:Algorithm"><span style="display: none;">&#160;</span></span>, <a href="/wiki/Special:BookSources/0671492071" class="internal mw-magiclink-isbn">ISBN 0-671-49207-1</a>. Cf. Chapter "The Spirit of Truth" for a history leading to, and a discussion of, his proof.</li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=30" title="Edit section: Further reading">edit</a>]</span> <span class="mw-headline" id="Further_reading">Further reading</span></h2>
+<ul>
+<li>David Harel, Yishai A. Feldman, <i>Algorithmics: the spirit of computing</i>, Edition 3, Pearson Education, 2004, <a href="/wiki/Special:BookSources/0321117840" class="internal mw-magiclink-isbn">ISBN 0-321-11784-0</a></li>
+<li>Jean-Luc Chabert, Évelyne Barbin, <i>A history of algorithms: from the pebble to the microchip</i>, Springer, 1999, <a href="/wiki/Special:BookSources/3540633693" class="internal mw-magiclink-isbn">ISBN 3-540-63369-3</a></li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Algorithm&amp;action=edit&amp;section=31" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<table class="metadata mbox-small plainlinks" style="border:1px solid #aaa; background-color:#f9f9f9;">
+<tr>
+<td class="mbox-image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikibooks-logo-en-noslogan.svg/40px-Wikibooks-logo-en-noslogan.svg.png" width="40" height="40" /></td>
+<td class="mbox-text" style="">Wikibooks has a book on the topic of
+<div style="margin-left:10px;"><i><b><a href="http://en.wikibooks.org/wiki/Algorithms" class="extiw" title="wikibooks:Algorithms">Algorithms</a></b></i></div>
+</td>
+</tr>
+</table>
+<ul>
+<li><a href="http://www.cs.sunysb.edu/~algorith/" class="external text" rel="nofollow">The Stony Brook Algorithm Repository</a></li>
+<li><span class="citation mathworld" id="Reference-Mathworld-Algorithm"><a href="/wiki/Eric_W._Weisstein" title="Eric W. Weisstein">Weisstein, Eric W.</a>, "<a href="http://mathworld.wolfram.com/Algorithm.html" class="external text" rel="nofollow">Algorithm</a>" from <a href="/wiki/MathWorld" title="MathWorld">MathWorld</a>.</span></li>
+<li><a href="http://everydaymath.uchicago.edu/educators/Algorithms_final.pdf" class="external text" rel="nofollow">Algorithms in Everyday Mathematics</a></li>
+<li><a href="http://www.dmoz.org/Computers/Algorithms//" class="external text" rel="nofollow">Algorithms</a> at the <a href="/wiki/Open_Directory_Project" title="Open Directory Project">Open Directory Project</a></li>
+<li><a href="http://sortieralgorithmen.de/" class="external text" rel="nofollow">Sortier- und Suchalgorithmen (German)</a></li>
+<li><a href="http://compgeom.cs.uiuc.edu/~jeffe//teaching/algorithms/" class="external text" rel="nofollow">Jeff Erickson Algorithms course material</a></li>
+<li><a href="http://www.mdpi.com/journal/algorithms/" class="external text" rel="nofollow"><i>Algorithms</i></a> – an Open Access journal</li>
+</ul>
+<p><span id="interwiki-uk-ga"></span></p>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 18874/1000000
+Post-expand include size: 124548/2048000 bytes
+Template argument size: 35832/2048000 bytes
+Expensive parser function count: 4/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:775-0!1!0!default!!en!4 and timestamp 20101013101756 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikipedia.org/wiki/Algorithm">http://en.wikipedia.org/wiki/Algorithm</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Algorithms" title="Category:Algorithms">Algorithms</a></span> | <span dir='ltr'><a href="/wiki/Category:Arabic_words_and_phrases" title="Category:Arabic words and phrases">Arabic words and phrases</a></span> | <span dir='ltr'><a href="/wiki/Category:Theoretical_computer_science" title="Category:Theoretical computer science">Theoretical computer science</a></span> | <span dir='ltr'><a href="/wiki/Category:Articles_with_example_pseudocode" title="Category:Articles with example pseudocode">Articles with example pseudocode</a></span> | <span dir='ltr'><a href="/wiki/Category:Mathematical_logic" title="Category:Mathematical logic">Mathematical logic</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir='ltr'><a href="/wiki/Category:All_articles_with_dead_external_links" title="Category:All articles with dead external links">All articles with dead external links</a></span> | <span dir='ltr'><a href="/wiki/Category:Articles_with_dead_external_links_from_March_2010" title="Category:Articles with dead external links from March 2010">Articles with dead external links from March 2010</a></span> | <span dir='ltr'><a href="/wiki/Category:Articles_to_be_expanded_from_September_2009" title="Category:Articles to be expanded from September 2009">Articles to be expanded from September 2009</a></span> | <span dir='ltr'><a href="/wiki/Category:All_articles_to_be_expanded" title="Category:All articles to be expanded">All articles to be expanded</a></span> | <span dir='ltr'><a href="/wiki/Category:All_accuracy_disputes" title="Category:All accuracy disputes">All accuracy disputes</a></span> | <span dir='ltr'><a href="/wiki/Category:Articles_with_disputed_statements_from_September_2009" title="Category:Articles with disputed statements from September 2009">Articles with disputed statements from September 2009</a></span> | <span dir='ltr'><a href="/wiki/Category:Use_mdy_dates_from_August_2010" title="Category:Use mdy dates from August 2010">Use mdy dates from August 2010</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-prefswitch-link-anon"><a href="http://en.wikipedia.org/w/index.php?title=Special:UsabilityInitiativePrefSwitch&amp;from=Algorithm" title="Learn about new features" class="no-text-transform">New features</a></li>
+					<li  id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Algorithm" title="You are encouraged to log in; however, it is not mandatory. [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><a href="/wiki/Algorithm"  title="View the content page [c]" accesskey="c"><span>Article</span></a></li>
+					<li  id="ca-talk"><a href="/wiki/Talk:Algorithm"  title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><a href="/wiki/Algorithm" ><span>Read</span></a></li>
+					<li id="ca-edit"><a href="/w/index.php?title=Algorithm&amp;action=edit"  title="You can edit this page. &#10;Please use the preview button before saving. [e]" accesskey="e"><span>Edit</span></a></li>
+					<li id="ca-history" class="collapsible "><a href="/w/index.php?title=Algorithm&amp;action=history"  title="Past versions of this page [h]" accesskey="h"><span>View history</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-1" alt="Search" /></button>
+		</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/d/d6/Wikipedia-logo-v2-en.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+					<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
+					<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+					<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+					<li id="n-variablepage" class="active" ><a href="/w/index.php?title=Special:VariablePage&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=spontaneous_donation">Donate</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- interaction -->
+<div class="portal" id='p-interaction'>
+	<h5>Interaction</h5>
+	<div class="body">
+				<ul>
+					<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+					<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+					<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+					<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /interaction -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Algorithm" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Algorithm" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="/w/index.php?title=Algorithm&amp;oldid=390188121" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Algorithm&amp;id=390188121" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- coll-print_export -->
+<div class="portal" id='p-coll-print_export'>
+	<h5>Print/export</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Algorithm" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Algorithm&amp;oldid=390188121&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Algorithm&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- LANGUAGES -->
+<div class="portal" id="p-lang">
+	<h5>Languages</h5>
+	<div class="body">
+		<ul>
+					<li class="interwiki-af"><a href="http://af.wikipedia.org/wiki/Algoritme" title="Algoritme">Afrikaans</a></li>
+					<li class="interwiki-ar"><a href="http://ar.wikipedia.org/wiki/%D8%AE%D9%88%D8%A7%D8%B1%D8%B2%D9%85%D9%8A%D8%A9" title="خوارزمية">العربية</a></li>
+					<li class="interwiki-an"><a href="http://an.wikipedia.org/wiki/Algorismo" title="Algorismo">Aragonés</a></li>
+					<li class="interwiki-ast"><a href="http://ast.wikipedia.org/wiki/Algoritmu" title="Algoritmu">Asturianu</a></li>
+					<li class="interwiki-az"><a href="http://az.wikipedia.org/wiki/Alqoritm" title="Alqoritm">Azərbaycanca</a></li>
+					<li class="interwiki-bn"><a href="http://bn.wikipedia.org/wiki/%E0%A6%85%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B2%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%AE" title="অ্যালগরিদম">বাংলা</a></li>
+					<li class="interwiki-zh-min-nan"><a href="http://zh-min-nan.wikipedia.org/wiki/I%C3%A1n-s%C7%B9g-hoat" title="Ián-sǹg-hoat">Bân-lâm-gú</a></li>
+					<li class="interwiki-be"><a href="http://be.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%B0%D1%80%D1%8B%D1%82%D0%BC" title="Алгарытм">Беларуская</a></li>
+					<li class="interwiki-be-x-old"><a href="http://be-x-old.wikipedia.org/wiki/%D0%90%D0%BB%D1%8C%D0%B3%D0%B0%D1%80%D1%8B%D1%82%D0%BC" title="Альгарытм">Беларуская (тарашкевіца)</a></li>
+					<li class="interwiki-bs"><a href="http://bs.wikipedia.org/wiki/Algoritam" title="Algoritam">Bosanski</a></li>
+					<li class="interwiki-bg"><a href="http://bg.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D1%8A%D0%BC" title="Алгоритъм">Български</a></li>
+					<li class="interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Algorisme" title="Algorisme">Català</a></li>
+					<li class="interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Algoritmus" title="Algoritmus">Česky</a></li>
+					<li class="interwiki-da"><a href="http://da.wikipedia.org/wiki/Algoritme" title="Algoritme">Dansk</a></li>
+					<li class="interwiki-de"><a href="http://de.wikipedia.org/wiki/Algorithmus" title="Algorithmus">Deutsch</a></li>
+					<li class="interwiki-et"><a href="http://et.wikipedia.org/wiki/Algoritm" title="Algoritm">Eesti</a></li>
+					<li class="interwiki-el"><a href="http://el.wikipedia.org/wiki/%CE%91%CE%BB%CE%B3%CF%8C%CF%81%CE%B9%CE%B8%CE%BC%CE%BF%CF%82" title="Αλγόριθμος">Ελληνικά</a></li>
+					<li class="interwiki-es"><a href="http://es.wikipedia.org/wiki/Algoritmo" title="Algoritmo">Español</a></li>
+					<li class="interwiki-eo"><a href="http://eo.wikipedia.org/wiki/Algoritmo" title="Algoritmo">Esperanto</a></li>
+					<li class="interwiki-eu"><a href="http://eu.wikipedia.org/wiki/Algoritmo" title="Algoritmo">Euskara</a></li>
+					<li class="interwiki-fa"><a href="http://fa.wikipedia.org/wiki/%D8%A7%D9%84%DA%AF%D9%88%D8%B1%DB%8C%D8%AA%D9%85" title="الگوریتم">فارسی</a></li>
+					<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Algorithmique" title="Algorithmique">Français</a></li>
+					<li class="interwiki-gl"><a href="http://gl.wikipedia.org/wiki/Algoritmo" title="Algoritmo">Galego</a></li>
+					<li class="interwiki-ko"><a href="http://ko.wikipedia.org/wiki/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" title="알고리즘">한국어</a></li>
+					<li class="interwiki-hi"><a href="http://hi.wikipedia.org/wiki/%E0%A4%85%E0%A4%B2%E0%A5%8D%E0%A4%97%E0%A5%8B%E0%A4%B0%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%AE" title="अल्गोरिद्म">हिन्दी</a></li>
+					<li class="interwiki-hr"><a href="http://hr.wikipedia.org/wiki/Algoritam" title="Algoritam">Hrvatski</a></li>
+					<li class="interwiki-io"><a href="http://io.wikipedia.org/wiki/Algoritmo" title="Algoritmo">Ido</a></li>
+					<li class="interwiki-id"><a href="http://id.wikipedia.org/wiki/Algoritma" title="Algoritma">Bahasa Indonesia</a></li>
+					<li class="interwiki-ia"><a href="http://ia.wikipedia.org/wiki/Algorithmo" title="Algorithmo">Interlingua</a></li>
+					<li class="interwiki-is"><a href="http://is.wikipedia.org/wiki/Reiknirit" title="Reiknirit">Íslenska</a></li>
+					<li class="interwiki-it"><a href="http://it.wikipedia.org/wiki/Algoritmo" title="Algoritmo">Italiano</a></li>
+					<li class="interwiki-he"><a href="http://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%92%D7%95%D7%A8%D7%99%D7%AA%D7%9D" title="אלגוריתם">עברית</a></li>
+					<li class="interwiki-ka"><a href="http://ka.wikipedia.org/wiki/%E1%83%90%E1%83%9A%E1%83%92%E1%83%9D%E1%83%A0%E1%83%98%E1%83%97%E1%83%9B%E1%83%98" title="ალგორითმი">ქართული</a></li>
+					<li class="interwiki-ku"><a href="http://ku.wikipedia.org/wiki/Algor%C3%AEtma" title="Algorîtma">Kurdî</a></li>
+					<li class="interwiki-la"><a href="http://la.wikipedia.org/wiki/Algorithmus" title="Algorithmus">Latina</a></li>
+					<li class="interwiki-lv"><a href="http://lv.wikipedia.org/wiki/Algoritms" title="Algoritms">Latviešu</a></li>
+					<li class="interwiki-lb"><a href="http://lb.wikipedia.org/wiki/Algorithmus" title="Algorithmus">Lëtzebuergesch</a></li>
+					<li class="interwiki-lt"><a href="http://lt.wikipedia.org/wiki/Algoritmas" title="Algoritmas">Lietuvių</a></li>
+					<li class="interwiki-hu"><a href="http://hu.wikipedia.org/wiki/Algoritmus" title="Algoritmus">Magyar</a></li>
+					<li class="interwiki-mk"><a href="http://mk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%B0%D0%BC" title="Алгоритам">Македонски</a></li>
+					<li class="interwiki-ml"><a href="http://ml.wikipedia.org/wiki/%E0%B4%85%E0%B5%BD%E0%B4%97%E0%B5%8A%E0%B4%B0%E0%B4%BF%E0%B4%A4%E0%B4%82" title="അൽഗൊരിതം">മലയാളം</a></li>
+					<li class="interwiki-mr"><a href="http://mr.wikipedia.org/wiki/%E0%A4%85%E0%A4%B2%E0%A5%8D%E0%A4%97%E0%A5%8B%E0%A4%B0%E0%A4%BF%E0%A4%A6%E0%A4%AE" title="अल्गोरिदम">मराठी</a></li>
+					<li class="interwiki-arz"><a href="http://arz.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D9%88%D8%B1%D9%8A%D8%AA%D9%85" title="الجوريتم">مصرى</a></li>
+					<li class="interwiki-ms"><a href="http://ms.wikipedia.org/wiki/Algoritma" title="Algoritma">Bahasa Melayu</a></li>
+					<li class="interwiki-mn"><a href="http://mn.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC" title="Алгоритм">Монгол</a></li>
+					<li class="interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Algoritme" title="Algoritme">Nederlands</a></li>
+					<li class="interwiki-ja"><a href="http://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0" title="アルゴリズム">日本語</a></li>
+					<li class="interwiki-no"><a href="http://no.wikipedia.org/wiki/Algoritme" title="Algoritme">‪Norsk (bokmål)‬</a></li>
+					<li class="interwiki-nn"><a href="http://nn.wikipedia.org/wiki/Algoritme" title="Algoritme">‪Norsk (nynorsk)‬</a></li>
+					<li class="interwiki-uz"><a href="http://uz.wikipedia.org/wiki/Algoritm" title="Algoritm">O'zbek</a></li>
+					<li class="interwiki-pnb"><a href="http://pnb.wikipedia.org/wiki/%D8%A7%D9%84%DA%AF%D9%88%D8%B1%D8%AA%DA%BE%D9%85" title="الگورتھم">پنجابی</a></li>
+					<li class="interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Algorytm" title="Algorytm">Polski</a></li>
+					<li class="interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Algoritmo" title="Algoritmo">Português</a></li>
+					<li class="interwiki-kaa"><a href="http://kaa.wikipedia.org/wiki/Algoritm" title="Algoritm">Qaraqalpaqsha</a></li>
+					<li class="interwiki-ro"><a href="http://ro.wikipedia.org/wiki/Algoritm" title="Algoritm">Română</a></li>
+					<li class="interwiki-ru"><a href="http://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC" title="Алгоритм">Русский</a></li>
+					<li class="interwiki-sah"><a href="http://sah.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC" title="Алгоритм">Саха тыла</a></li>
+					<li class="interwiki-sq"><a href="http://sq.wikipedia.org/wiki/Algoritmi" title="Algoritmi">Shqip</a></li>
+					<li class="interwiki-scn"><a href="http://scn.wikipedia.org/wiki/Alguritmu" title="Alguritmu">Sicilianu</a></li>
+					<li class="interwiki-si"><a href="http://si.wikipedia.org/wiki/%E0%B6%87%E0%B6%BD%E0%B7%8A%E0%B6%9C%E0%B7%9C%E0%B6%BB%E0%B7%92%E0%B6%AD%E0%B6%B8" title="ඇල්ගොරිතම">සිංහල</a></li>
+					<li class="interwiki-simple"><a href="http://simple.wikipedia.org/wiki/Algorithm" title="Algorithm">Simple English</a></li>
+					<li class="interwiki-sd"><a href="http://sd.wikipedia.org/wiki/%D8%A7%D9%84%D8%AE%D9%88%D8%A7%D8%B1%D8%B2%D9%85%D9%8A" title="الخوارزمي">سنڌي</a></li>
+					<li class="interwiki-sk"><a href="http://sk.wikipedia.org/wiki/Algoritmus" title="Algoritmus">Slovenčina</a></li>
+					<li class="interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Algoritem" title="Algoritem">Slovenščina</a></li>
+					<li class="interwiki-sr"><a href="http://sr.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%B0%D0%BC" title="Алгоритам">Српски / Srpski</a></li>
+					<li class="interwiki-sh"><a href="http://sh.wikipedia.org/wiki/Algoritam" title="Algoritam">Srpskohrvatski / Српскохрватски</a></li>
+					<li class="interwiki-su"><a href="http://su.wikipedia.org/wiki/Algoritma" title="Algoritma">Basa Sunda</a></li>
+					<li class="interwiki-fi"><a href="http://fi.wikipedia.org/wiki/Algoritmi" title="Algoritmi">Suomi</a></li>
+					<li class="interwiki-sv"><a href="http://sv.wikipedia.org/wiki/Algoritm" title="Algoritm">Svenska</a></li>
+					<li class="interwiki-tl"><a href="http://tl.wikipedia.org/wiki/Algoritmo" title="Algoritmo">Tagalog</a></li>
+					<li class="interwiki-ta"><a href="http://ta.wikipedia.org/wiki/%E0%AE%AA%E0%AE%9F%E0%AE%BF%E0%AE%AE%E0%AF%81%E0%AE%B1%E0%AF%88%E0%AE%A4%E0%AF%8D_%E0%AE%A4%E0%AF%80%E0%AE%B0%E0%AF%8D%E0%AE%B5%E0%AF%81" title="படிமுறைத் தீர்வு">தமிழ்</a></li>
+					<li class="interwiki-te"><a href="http://te.wikipedia.org/wiki/%E0%B0%85%E0%B0%B2%E0%B1%8D%E0%B0%97%E0%B0%BE%E0%B0%B0%E0%B0%BF%E0%B0%A5%E0%B0%82" title="అల్గారిథం">తెలుగు</a></li>
+					<li class="interwiki-th"><a href="http://th.wikipedia.org/wiki/%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%98%E0%B8%B5" title="ขั้นตอนวิธี">ไทย</a></li>
+					<li class="interwiki-tg"><a href="http://tg.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC" title="Алгоритм">Тоҷикӣ</a></li>
+					<li class="interwiki-tr"><a href="http://tr.wikipedia.org/wiki/Algoritma" title="Algoritma">Türkçe</a></li>
+					<li class="interwiki-uk"><a href="http://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC" title="Алгоритм">Українська</a></li>
+					<li class="interwiki-ur"><a href="http://ur.wikipedia.org/wiki/%D8%A7%D9%84%D8%AE%D9%88%D8%A7%D8%B1%D8%B2%D9%85" title="الخوارزم">اردو</a></li>
+					<li class="interwiki-vi"><a href="http://vi.wikipedia.org/wiki/Thu%E1%BA%ADt_to%C3%A1n" title="Thuật toán">Tiếng Việt</a></li>
+					<li class="interwiki-war"><a href="http://war.wikipedia.org/wiki/Algoritmo" title="Algoritmo">Winaray</a></li>
+					<li class="interwiki-yi"><a href="http://yi.wikipedia.org/wiki/%D7%90%D7%9C%D7%92%D7%90%D7%A8%D7%99%D7%98%D7%9D" title="אלגאריטם">ייִדיש</a></li>
+					<li class="interwiki-zh-yue"><a href="http://zh-yue.wikipedia.org/wiki/%E6%BC%94%E7%AE%97%E6%B3%95" title="演算法">粵語</a></li>
+					<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/%E7%AE%97%E6%B3%95" title="算法">中文</a></li>
+				</ul>
+	</div>
+</div>
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 12 October 2010 at 01:58.<br /></li>
+																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
+Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.<br /></li><li class="noprint"><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+																							<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+															</ul>
+										<ul id="footer-icons" class="noprint">
+								<li id="footer-icon-poweredby"><a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></li>
+												<li id="footer-icon-copyright"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></li>
+							</ul>
+			<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		
+<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv179 in 0.141 secs. -->			</body>
+</html>
